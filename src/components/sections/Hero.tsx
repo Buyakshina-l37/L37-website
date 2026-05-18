@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Hero() {
   return (
     <section
@@ -24,9 +26,12 @@ export default function Hero() {
         </p>
 
         {/* CTA кнопка */}
-        <button className="w-[294px] py-[18px] bg-navy-base text-light-base font-denim font-medium text-[16px] leading-[1.25] text-center rounded-[16px] shadow-button hover:bg-[#1a2440] transition-colors whitespace-nowrap">
+        <Link
+          href="/contact"
+          className="w-[294px] py-[18px] bg-navy-base text-light-base font-denim font-medium text-[16px] leading-[1.25] text-center rounded-[16px] shadow-button hover:bg-[#1a2440] transition-colors whitespace-nowrap block"
+        >
           Contact our experts
-        </button>
+        </Link>
       </div>
 
       {/* Vision блок */}

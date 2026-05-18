@@ -30,9 +30,7 @@ export default function Home() {
         <section id="stats">
           <Stats />
         </section>
-        <section id="partners">
-          <Partners />
-        </section>
+        <Partners />
         <CTA />
       </main>
       <Footer />

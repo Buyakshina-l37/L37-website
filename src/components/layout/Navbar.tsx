@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const navLinks = ['Services', 'Company', 'Team', 'Careers', 'Blog', 'Contact Us']
+const navLinks = [
+  { label: 'Services',    href: '#' },
+  { label: 'Company',     href: '#' },
+  { label: 'Team',        href: '#' },
+  { label: 'Careers',     href: '#' },
+  { label: 'Blog',        href: '#' },
+  { label: 'Contact Us',  href: '/contact' },
+]
 
 export default function Navbar() {
   return (
@@ -9,23 +16,25 @@ export default function Navbar() {
       <div className="max-w-[1408px] mx-auto px-8 h-full relative flex items-center">
 
         {/* Лого — абсолютно зліва */}
-        <Image
-          src="/images/logo/l37-logo-black.svg"
-          alt="L37"
-          width={84}
-          height={48}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo/l37-logo-black.svg"
+            alt="L37"
+            width={84}
+            height={48}
+            priority
+          />
+        </Link>
 
         {/* Меню — абсолютний центр */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center" style={{ gap: '32px' }}>
-          {navLinks.map(item => (
+          {navLinks.map(({ label, href }) => (
             <Link
-              key={item}
-              href="#"
+              key={label}
+              href={href}
               className="font-denim font-normal text-[16px] leading-[1.4] text-navy-base hover:text-primary-base transition-colors whitespace-nowrap"
             >
-              {item}
+              {label}
             </Link>
           ))}
         </div>

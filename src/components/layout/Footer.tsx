@@ -4,15 +4,15 @@ import Link from 'next/link'
 const navLinks = ['Services', 'Company', 'Team', 'Careers', 'Blog', 'Contact Us']
 
 const socialLinks = [
-  { href: '#', icon: '/images/Button-social-media-in.svg', label: 'LinkedIn' },
-  { href: '#', icon: '/images/Button-social-media-fb.svg', label: 'Facebook' },
-  { href: '#', icon: '/images/Button-social-media-insta.svg', label: 'Instagram' },
-  { href: '#', icon: '/images/Button-social-media-x.svg', label: 'X' },
+  { href: 'https://linkedin.com/company/l37-co/', icon: '/images/Button-social-media-in.svg', label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/L37.co', icon: '/images/Button-social-media-fb.svg', label: 'Facebook' },
+  { href: 'https://www.instagram.com/l37.co', icon: '/images/Button-social-media-insta.svg', label: 'Instagram' },
+  { href: 'https://x.com/L37Healthcare', icon: '/images/Button-social-media-x.svg', label: 'X' },
 ]
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0C1629' }}>
+    <footer style={{ backgroundColor: '#0C1629', borderRadius: '24px 24px 0 0' }}>
       <div
         className="max-w-[1408px] mx-auto px-[80px]"
         style={{ paddingTop: '64px', paddingBottom: '48px' }}
@@ -63,9 +63,11 @@ export default function Footer() {
               <Link
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="opacity-60 hover:opacity-100 transition-opacity"
               >
-                <Image src={icon} alt={label} width={24} height={24} />
+                <Image src={icon} alt={label} width={40} height={40} />
               </Link>
             ))}
           </div>

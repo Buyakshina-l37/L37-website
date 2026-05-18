@@ -130,8 +130,10 @@ export default function Partners() {
   useEffect(() => {
     const updateWidth = () => {
       if (containerRef.current) {
-        const containerWidth = containerRef.current.offsetWidth
-        setCardWidth((containerWidth - 24) / 2)
+        // offsetWidth viewport = батьківський контент + 40px (padding 20px з кожного боку)
+        // Контентна ширина viewport (де живуть картки) = offsetWidth - 40
+        const contentWidth = containerRef.current.offsetWidth - 40
+        setCardWidth((contentWidth - 24) / 2)
       }
     }
     updateWidth()
@@ -150,73 +152,77 @@ export default function Partners() {
   const goPrev = () => { if (currentIndex > 0) slideTo(currentIndex - 1) }
 
   return (
-    <section id="partners" className="bg-light-base px-[16px] pt-[140px] pb-[140px]">
-      <div className="max-w-[1408px] mx-auto">
+    <section
+      id="partners"
+      className="mx-[16px] rounded-[24px] pt-[140px] pb-[80px]"
+      style={{ backgroundColor: '#F5F7FC' }}
+    >
 
-        {/* Заголовок */}
-        <div className="flex flex-col items-center gap-[16px] mb-[64px]">
-          <Label text="partners" />
-          <h2 className="font-denim font-normal text-[48px] leading-[1.15] text-navy-base text-center max-w-[600px]">
-            Strategic Partnerships to Drive Growth
-          </h2>
-        </div>
-
-        {/* Карусель */}
-        <div
-          className="relative"
-          style={{ paddingLeft: '32px', paddingRight: '32px' }}
-        >
-          {/* Viewport */}
-          <div
-            ref={containerRef}
-            className="overflow-hidden"
-            style={{ paddingBottom: '40px', paddingTop: '16px' }}
-          >
-            {/* Track */}
-            <div
-              className="flex gap-[24px]"
-              style={{
-                transform: `translateX(calc(-${currentIndex} * ${cardWidth + 24}px))`,
-                transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-              }}
-            >
-              {partners.map((partner) => (
-                <div
-                  key={partner.name}
-                  style={{ flex: `0 0 ${cardWidth}px`, width: `${cardWidth}px` }}
-                >
-                  <PartnerCard partner={partner} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Кнопка ← */}
-          {currentIndex > 0 && (
-            <button
-              onClick={goPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-[32px] h-[32px] rounded-full bg-navy-base flex items-center justify-center hover:bg-primary-base transition-colors"
-            >
-              <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
-                <path d="M7 1L1 7L7 13" stroke="#F5F7FC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          )}
-
-          {/* Кнопка → */}
-          {currentIndex + 2 < total && (
-            <button
-              onClick={goNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-[32px] h-[32px] rounded-full bg-navy-base flex items-center justify-center hover:bg-primary-base transition-colors"
-            >
-              <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
-                <path d="M1 1L7 7L1 13" stroke="#F5F7FC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          )}
-
-        </div>
+      {/* Заголовок */}
+      <div className="flex flex-col items-center gap-[16px] mb-[64px]">
+        <Label text="partners" />
+        <h2 className="font-denim font-normal text-[48px] leading-[1.15] text-navy-base text-center max-w-[600px]">
+          Strategic Partnerships to Drive Growth
+        </h2>
       </div>
+
+      {/* Карусель */}
+      <div className="relative px-[64px]">
+
+        {/* Viewport — padding trick: 20px з боків і зверху, 90px знизу для тіні карток */}
+        <div
+          ref={containerRef}
+          style={{
+            margin: '-20px -20px -90px -20px',
+            padding: '20px 20px 90px 20px',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Track */}
+          <div
+            className="flex gap-[24px]"
+            style={{
+              transform: `translateX(calc(-${currentIndex} * ${cardWidth + 24}px))`,
+              transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            }}
+          >
+            {partners.map((partner) => (
+              <div
+                key={partner.name}
+                style={{ flex: `0 0 ${cardWidth}px`, width: `${cardWidth}px` }}
+              >
+                <PartnerCard partner={partner} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Кнопка ← */}
+        {currentIndex > 0 && (
+          <button
+            onClick={goPrev}
+            className="absolute left-[64px] top-1/2 -translate-y-1/2 z-10 w-[32px] h-[32px] rounded-full bg-navy-base flex items-center justify-center hover:bg-primary-base transition-colors"
+          >
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+              <path d="M7 1L1 7L7 13" stroke="#F5F7FC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
+
+        {/* Кнопка → */}
+        {currentIndex + 2 < total && (
+          <button
+            onClick={goNext}
+            className="absolute right-[48px] top-1/2 -translate-y-1/2 z-10 w-[32px] h-[32px] rounded-full bg-navy-base flex items-center justify-center hover:bg-primary-base transition-colors"
+          >
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+              <path d="M1 1L7 7L1 13" stroke="#F5F7FC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
+
+      </div>
+
     </section>
   )
 }

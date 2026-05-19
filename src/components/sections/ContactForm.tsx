@@ -2,9 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react'
 
-const HUBSPOT_PORTAL_ID = '48796367'
-const HUBSPOT_FORM_ID = '9e292710-121c-493d-a896-3eab828a91fd'
-
 const interests = [
   'Business inquiry',
   'Investment opportunities',
@@ -79,26 +76,23 @@ export default function ContactForm() {
     setSubmitError('')
 
     try {
-      const response = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            fields: [
-              { name: 'firstname', value: formData.firstName },
-              { name: 'lastname', value: formData.lastName },
-              { name: 'email', value: formData.email },
-              { name: 'what_are_you_interested_in', value: formData.interest },
-              { name: 'message', value: formData.message },
-            ],
-            context: {
-              pageUri: window.location.href,
-              pageName: 'Contact Us',
-            },
-          }),
-        }
-      )
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: [
+            { name: 'firstname', value: formData.firstName },
+            { name: 'lastname', value: formData.lastName },
+            { name: 'email', value: formData.email },
+            { name: 'what_are_you_interested_in', value: formData.interest },
+            { name: 'message', value: formData.message },
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: 'Contact Us',
+          },
+        }),
+      })
 
       if (response.ok) {
         setIsSuccess(true)
@@ -120,10 +114,16 @@ export default function ContactForm() {
         className="bg-white rounded-[16px] p-[60px] flex flex-col gap-[24px]"
         style={{ boxShadow: '0px 20px 48px -8px rgba(0, 11, 223, 0.06)' }}
       >
-        <h2 className="font-denim font-normal text-[48px] leading-[1.15] text-navy-base">
+        <h2
+          className="font-denim font-normal text-[36px] text-navy-base"
+          style={{ lineHeight: '1.15' }}
+        >
           Get in touch with L37
         </h2>
-        <p className="font-denim font-normal text-[20px] leading-[1.4] text-[rgba(12,22,41,0.8)]">
+        <p
+          className="font-denim font-normal text-[18px] text-[rgba(12,22,41,0.8)]"
+          style={{ lineHeight: '1.4' }}
+        >
           Thank you for your interest! One of our team members will reach out to you soon.
         </p>
       </div>

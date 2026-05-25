@@ -144,7 +144,7 @@ export default function ContactForm() {
       {/* First + Last name */}
       <div className="flex gap-[32px]">
         <div className="flex flex-col gap-[8px] flex-1">
-          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-navy-base">
+          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
             First Name
           </label>
           <input
@@ -159,7 +159,7 @@ export default function ContactForm() {
           )}
         </div>
         <div className="flex flex-col gap-[8px] flex-1">
-          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-navy-base">
+          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
             Last Name
           </label>
           <input
@@ -177,7 +177,7 @@ export default function ContactForm() {
 
       {/* Email */}
       <div className="flex flex-col gap-[8px]">
-        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-navy-base">
+        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
           Email
         </label>
         <input
@@ -194,7 +194,7 @@ export default function ContactForm() {
 
       {/* Dropdown */}
       <div className="flex flex-col gap-[8px]" ref={dropdownRef}>
-        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-primary-base">
+        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
           What are you interested in?
         </label>
         <div className="relative">
@@ -259,7 +259,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="flex flex-col gap-[8px]">
-        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-navy-base">
+        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
           Message
         </label>
         <div className="relative">

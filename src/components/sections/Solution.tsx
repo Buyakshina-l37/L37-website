@@ -35,7 +35,7 @@ export default function Solution() {
   return (
     <section
       id="solution"
-      className="relative mx-auto bg-[#F5F7FC] rounded-[13px] overflow-hidden"
+      className="relative mx-auto"
       style={{ maxWidth: '1408px', minHeight: '1237px' }}
     >
       {/* Заголовок — лівий стовпець */}

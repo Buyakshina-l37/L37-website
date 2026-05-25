@@ -14,10 +14,13 @@ export default function Home() {
     <>
       <Navbar />
       <SecondaryNav />
-      <main className="bg-light-strong">
-        <section id="vision">
-          <Hero />
-        </section>
+      <main>
+        {/* Hero wrapper: accounts for fixed 90px navbar + horizontal page margins */}
+        <div style={{ paddingTop: '90px', paddingLeft: '16px', paddingRight: '16px' }}>
+          <section id="vision">
+            <Hero />
+          </section>
+        </div>
         <section id="solution" className="px-[16px] py-[24px]">
           <Solution />
         </section>

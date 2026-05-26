@@ -39,4 +39,9 @@
   * {
     box-sizing: border-box;
   }
+
+  /* Courier Prime available as CSS variable for data-card numbers */
+  :root {
+    --font-courier-prime-fallback: 'Courier New', Courier, monospace;
+  }
 }

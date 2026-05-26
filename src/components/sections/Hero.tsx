@@ -1,8 +1,10 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import GraphLayer from './GraphLayer'
+import CardLive from './CardLive'
 
 /**
  * HeroSection — entrance animation in 6 phases (Framer Motion)
@@ -13,24 +15,90 @@ import GraphLayer from './GraphLayer'
  * Phase 4 (1.8–2.4s)  UI panels    — slide-up + fade, stagger
  * Phase 5 (2.2–3.0s)  Humanoid     — slide-in from right + fade, brightness pulse
  * Phase 6 (2.8–3.4s)  Text+button  — slide-up + fade, bounce CTA
+ *
+ * Micro-animations (continuous after entrance):
+ * Task 1: Live numbers on cards (cross-fade, Courier Prime, useState+setInterval)
+ * Task 2: Datapoint indicator pulse on each card
+ * Task 3: Query Log row highlight loop
+ * Tasks 4-6: handled in GraphLayer (traveling dash, node wave, sphere ripple)
  */
 
 // ── Card data: position, float amplitude, float duration ────────
 const CARDS = [
-  { src: '/images/card-BP.svg',   alt: 'Blood Pressure',    left: 138, top: 92,  w: 59, h: 32, amp: -5, floatDur: 3.8 },
-  { src: '/images/card-HR.svg',   alt: 'Heart Rate',        left: 302, top: 100, w: 59, h: 32, amp: -4, floatDur: 3.2 },
-  { src: '/images/card-Sp.svg',   alt: 'SpO2',              left: 565, top: 128, w: 59, h: 32, amp: -6, floatDur: 4.0 },
-  { src: '/images/card-RR.svg',   alt: 'Respiratory Rate',  left: 379, top: 370, w: 59, h: 32, amp: -5, floatDur: 3.5 },
-  { src: '/images/card-EMG.svg',  alt: 'EMG',               left: 600, top: 384, w: 59, h: 36, amp: -4, floatDur: 4.2 },
-  { src: '/images/card-Temp.svg', alt: 'Temperature',       left: 698, top: 351, w: 59, h: 36, amp: -6, floatDur: 3.0 },
+  { key: 'BP',   alt: 'Blood Pressure',   left: 138, top: 92,  w: 59, h: 32, amp: -5, floatDur: 3.8, pulseDelay: 4.2 },
+  { key: 'HR',   alt: 'Heart Rate',       left: 302, top: 100, w: 59, h: 32, amp: -4, floatDur: 3.2, pulseDelay: 4.6 },
+  { key: 'Sp',   alt: 'SpO2',             left: 565, top: 128, w: 59, h: 32, amp: -6, floatDur: 4.0, pulseDelay: 5.0 },
+  { key: 'RR',   alt: 'Respiratory Rate', left: 379, top: 370, w: 59, h: 32, amp: -5, floatDur: 3.5, pulseDelay: 5.4 },
+  { key: 'EMG',  alt: 'EMG',              left: 600, top: 384, w: 59, h: 36, amp: -4, floatDur: 4.2, pulseDelay: 5.8 },
+  { key: 'Temp', alt: 'Temperature',      left: 698, top: 351, w: 59, h: 36, amp: -6, floatDur: 3.0, pulseDelay: 6.2 },
 ]
 
 // ── UI panel data: position + stagger index ──────────────────────
 const PANELS = [
   { src: '/images/node-info.svg',   alt: 'Node Info',   left: 1017, top: 102, w: 122, h: 108, layer: 'layerNodeInfo' },
   { src: '/images/ontologies.svg',  alt: 'Ontologies',  left: 1228, top: 146, w: 112, h: 110, layer: 'layerOntologies' },
-  { src: '/images/query-log.svg',   alt: 'Query Log',   left: 828,  top: 461, w: 112, h: 110, layer: 'layerQueryLog' },
 ]
+
+// ── Query Log row positions (from Figma: frame 13071:5334) ──────
+// Panel: 112×110, rows within content-frame at y=19
+const QUERY_LOG_ROWS = [
+  { y: 19, h: 19 },  // MATCH (d:Disease)
+  { y: 43, h: 19 },  // WHERE d.icd11 = …
+  { y: 67, h: 19 },  // RETURN path…
+  { y: 91, h: 19 },  // LIMIT 200
+]
+
+// ── Query Log highlight loop (Task 3) ──────────────────────────
+function QueryLogHighlight() {
+  const [activeRow, setActiveRow] = useState(-1)
+
+  useEffect(() => {
+    // Start after entrance animation (~2.3s panel entry + 0.5s)
+    let row = 0
+    let timeoutId: ReturnType<typeof setTimeout>
+
+    const advance = () => {
+      setActiveRow(row)
+      if (row < QUERY_LOG_ROWS.length - 1) {
+        row++
+        timeoutId = setTimeout(advance, 600)
+      } else {
+        // Last row shown: pause 2s then restart
+        timeoutId = setTimeout(() => {
+          row = 0
+          advance()
+        }, 2000)
+      }
+    }
+
+    // Initial delay to let entrance complete
+    timeoutId = setTimeout(advance, 3500)
+    return () => clearTimeout(timeoutId)
+  }, [])
+
+  if (activeRow < 0) return null
+
+  const rowConfig = QUERY_LOG_ROWS[activeRow]
+  return (
+    <motion.div
+      key={activeRow}
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: rowConfig.y,
+        width: 112,
+        height: rowConfig.h,
+        backgroundColor: 'rgba(36, 115, 242, 0.15)',
+        borderRadius: 2,
+        pointerEvents: 'none',
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    />
+  )
+}
 
 export default function HeroSection() {
   return (
@@ -67,46 +135,26 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* ─── Phase 2: Data cards — stagger entrance + infinite float ─── */}
-      {CARDS.map((card, i) => {
-        const entranceDelay = 0.6 + i * 0.12
-        const floatDelay = entranceDelay + 0.5
-        return (
-          <motion.img
-            key={card.src}
-            data-layer={`layerCard${card.alt.replace(/\s/g, '')}`}
-            src={card.src}
-            alt={card.alt}
-            width={card.w}
-            height={card.h}
-            style={{ position: 'absolute', left: card.left, top: card.top, width: card.w, height: card.h }}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{
-              scale: 1,
-              opacity: 1,
-              y: [0, card.amp, 0],
-            }}
-            transition={{
-              scale:   { duration: 0.5, delay: entranceDelay, ease: 'easeOut' },
-              opacity: { duration: 0.5, delay: entranceDelay },
-              y: {
-                duration: card.floatDur,
-                delay: floatDelay,
-                repeat: Infinity,
-                repeatType: 'loop',
-                ease: 'easeInOut',
-              },
-            }}
-          />
-        )
-      })}
+      {/* ─── Phase 2: Data cards — CardLive with entrance + float + live numbers ─── */}
+      {CARDS.map((card, i) => (
+        <CardLive
+          key={card.key}
+          cardKey={card.key}
+          left={card.left}
+          top={card.top}
+          amp={card.amp}
+          floatDur={card.floatDur}
+          entranceDelay={0.6 + i * 0.12}
+          pulseDelay={card.pulseDelay}
+        />
+      ))}
 
       {/* ─── Phase 3: Graph — GraphLayer handles its own animation ──── */}
       <div style={{ position: 'absolute', left: 954, top: 223, width: 389, height: 421 }}>
         <GraphLayer />
       </div>
 
-      {/* ─── Phase 4: UI panels — slide up + fade, stagger 0.15s ─────── */}
+      {/* ─── Phase 4: UI panels — node-info + ontologies (slide up + fade) ─── */}
       {PANELS.map((panel, i) => (
         <motion.img
           key={panel.src}
@@ -121,6 +169,26 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 1.8 + i * 0.15, ease: 'easeOut' }}
         />
       ))}
+
+      {/* ─── Phase 4: Query Log panel + highlight overlay (Task 3) ─── */}
+      <motion.div
+        data-layer="layerQueryLog"
+        style={{ position: 'absolute', left: 828, top: 461, width: 112, height: 110 }}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.8 + 2 * 0.15, ease: 'easeOut' }}
+      >
+        {/* Static query-log SVG image */}
+        <img
+          src="/images/query-log.svg"
+          alt="Query Log"
+          width={112}
+          height={110}
+          style={{ position: 'absolute', left: 0, top: 0, width: 112, height: 110, display: 'block' }}
+        />
+        {/* Highlight overlay (absolutely positioned within this div) */}
+        <QueryLogHighlight />
+      </motion.div>
 
       {/* ─── Phase 5: Humanoid — slide from right + brightness pulse ─── */}
       <motion.div

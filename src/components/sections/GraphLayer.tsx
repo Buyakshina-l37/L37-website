@@ -308,6 +308,28 @@ export default function GraphLayer() {
         ))}
       </g>
 
+      {/* ── dash-lines: traveling signal toward center (Task 4) ─── */}
+      <g data-layer="dash-lines">
+        {LINES.map((l, i) => (
+          <motion.line
+            key={i}
+            x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
+            stroke="#718399"
+            strokeOpacity={0.6}
+            strokeWidth={1}
+            strokeDasharray="5 15"
+            animate={{ strokeDashoffset: [20, 0] }}
+            transition={{
+              delay: 3.5 + (i % 7) * 0.22,
+              duration: 1.5 + (i % 5) * 0.3,
+              repeat: Infinity,
+              repeatType: 'loop',
+              ease: 'linear',
+            }}
+          />
+        ))}
+      </g>
+
       {/* ── nodes: pop in as lines complete ─────────────────── */}
       <g data-layer="nodes">
         {NODES.map((n, i) => (
@@ -318,8 +340,21 @@ export default function GraphLayer() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1.70 + i * 0.06, duration: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
           >
-            <rect x={n.x} y={n.y} width={n.size} height={n.size} fill="#718399" fillOpacity={0.5} />
-            <rect x={n.x} y={n.y} width={n.size} height={n.size} stroke="#718399" strokeWidth={0.5} />
+            {/* Nested motion.g: pulse scale after entrance (Task 5) */}
+            <motion.g
+              style={{ transformOrigin: `${n.x + n.size / 2}px ${n.y + n.size / 2}px` }}
+              animate={{ scale: [1, 1.15, 1], filter: ['brightness(1)', 'brightness(1.5)', 'brightness(1)'] }}
+              transition={{
+                delay: 3.5 + i * 0.3,
+                duration: 1.5,
+                repeat: Infinity,
+                repeatDelay: 6.9,
+                ease: 'easeInOut',
+              }}
+            >
+              <rect x={n.x} y={n.y} width={n.size} height={n.size} fill="#718399" fillOpacity={0.5} />
+              <rect x={n.x} y={n.y} width={n.size} height={n.size} stroke="#718399" strokeWidth={0.5} />
+            </motion.g>
           </motion.g>
         ))}
       </g>
@@ -371,6 +406,23 @@ export default function GraphLayer() {
         animate={{ scale: 1 }}
         transition={{ delay: 1.2, duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
       >
+        {/* Ripple ring expanding outward (Task 6) */}
+        <motion.circle
+          cx={152} cy={207} r={33}
+          fill="none"
+          stroke="white"
+          strokeOpacity={0.5}
+          strokeWidth={1}
+          style={{ transformOrigin: '152px 207px' }}
+          animate={{ scale: [1, 2], opacity: [0.6, 0] }}
+          transition={{
+            delay: 3.5,
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 1,
+            ease: 'easeOut',
+          }}
+        />
         <motion.circle
           cx="152" cy="207" r="33"
           fill="url(#paint0_radial_13071_5197)"

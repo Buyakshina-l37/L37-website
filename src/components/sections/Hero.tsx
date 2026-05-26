@@ -25,12 +25,12 @@ import CardLive from './CardLive'
 
 // ── Card data: position, float amplitude, float duration ────────
 const CARDS = [
-  { key: 'BP',   alt: 'Blood Pressure',   left: 138, top: 92,  w: 59, h: 32, amp: -5, floatDur: 3.8, pulseDelay: 4.2 },
-  { key: 'HR',   alt: 'Heart Rate',       left: 302, top: 100, w: 59, h: 32, amp: -4, floatDur: 3.2, pulseDelay: 4.6 },
-  { key: 'Sp',   alt: 'SpO2',             left: 565, top: 128, w: 59, h: 32, amp: -6, floatDur: 4.0, pulseDelay: 5.0 },
-  { key: 'RR',   alt: 'Respiratory Rate', left: 379, top: 370, w: 59, h: 32, amp: -5, floatDur: 3.5, pulseDelay: 5.4 },
-  { key: 'EMG',  alt: 'EMG',              left: 600, top: 384, w: 59, h: 36, amp: -4, floatDur: 4.2, pulseDelay: 5.8 },
-  { key: 'Temp', alt: 'Temperature',      left: 698, top: 351, w: 59, h: 36, amp: -6, floatDur: 3.0, pulseDelay: 6.2 },
+  { key: 'BP',   alt: 'Blood Pressure',   left: 124, top: 132, w: 59, h: 32, amp: -5, floatDur: 3.8, pulseDelay: 4.2 },
+  { key: 'HR',   alt: 'Heart Rate',       left: 401, top: 88,  w: 59, h: 32, amp: -4, floatDur: 3.2, pulseDelay: 4.6 },
+  { key: 'Sp',   alt: 'SpO2',             left: 648, top: 111, w: 59, h: 32, amp: -6, floatDur: 4.0, pulseDelay: 5.0 },
+  { key: 'RR',   alt: 'Respiratory Rate', left: 285, top: 380, w: 59, h: 32, amp: -5, floatDur: 3.5, pulseDelay: 5.4 },
+  { key: 'EMG',  alt: 'EMG',              left: 624, top: 363, w: 59, h: 36, amp: -4, floatDur: 4.2, pulseDelay: 5.8 },
+  { key: 'Temp', alt: 'Temperature',      left: 749, top: 330, w: 59, h: 36, amp: -6, floatDur: 3.0, pulseDelay: 6.2 },
 ]
 
 // ── UI panel data: position + stagger index ──────────────────────
@@ -61,13 +61,13 @@ function QueryLogHighlight() {
       setActiveRow(row)
       if (row < QUERY_LOG_ROWS.length - 1) {
         row++
-        timeoutId = setTimeout(advance, 600)
+        timeoutId = setTimeout(advance, 1200)
       } else {
-        // Last row shown: pause 2s then restart
+        // Last row shown: pause 3s then restart
         timeoutId = setTimeout(() => {
           row = 0
           advance()
-        }, 2000)
+        }, 3000)
       }
     }
 
@@ -88,7 +88,7 @@ function QueryLogHighlight() {
         top: rowConfig.y,
         width: 112,
         height: rowConfig.h,
-        backgroundColor: 'rgba(36, 115, 242, 0.15)',
+        backgroundColor: 'rgba(113, 131, 153, 0.1)',
         borderRadius: 2,
         pointerEvents: 'none',
       }}
@@ -233,8 +233,8 @@ export default function HeroSection() {
             margin: 0,
             fontFamily: '"Denim TRIAL", sans-serif',
             fontWeight: 500,
-            fontSize: '44px',
-            lineHeight: '51px',
+            fontSize: '40px',
+            lineHeight: '48px',
             color: 'rgba(12,22,41,0.8)',
             whiteSpace: 'nowrap',
           }}
@@ -242,7 +242,7 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 2.8, ease: 'easeOut' }}
         >
-          Clinical Intelligence for Safe&nbsp;
+          Where Clinical Intelligence meets
         </motion.p>
 
         {/* Line 2 — gradient */}

@@ -122,7 +122,7 @@ export default function HeroSection() {
         style={{ position: 'absolute', left: 0, top: 8, width: 912, height: 499 }}
         initial={{ x: -60, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut', delay: 0 }}
+        transition={{ duration: 1.4, ease: 'easeOut', delay: 0 }}
       >
         <Image
           src="/images/hospital.png"
@@ -143,7 +143,7 @@ export default function HeroSection() {
           top={card.top}
           amp={card.amp}
           floatDur={card.floatDur}
-          entranceDelay={0.6 + i * 0.12}
+          entranceDelay={1.2 + i * 0.12}
           pulseDelay={card.pulseDelay}
         />
       ))}

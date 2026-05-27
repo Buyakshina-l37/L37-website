@@ -65,7 +65,7 @@ export default function OntologiesPanel() {
         () => setActiveRadio(prev => (prev + 1) % CATEGORIES.length),
         1500,
       )
-    }, 4000)
+    }, 6200)
     return () => { clearTimeout(timer); clearInterval(interval) }
   }, [])
 

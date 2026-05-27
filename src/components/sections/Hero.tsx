@@ -71,7 +71,7 @@ function QueryLogHighlight() {
     }
 
     // Initial delay to let entrance complete
-    timeoutId = setTimeout(advance, 3500)
+    timeoutId = setTimeout(advance, 6200)
     return () => clearTimeout(timeoutId)
   }, [])
 
@@ -201,7 +201,7 @@ export default function HeroSection() {
         style={{ position: 'absolute', left: 1249, top: 298, width: 305, height: 457 }}
         initial={{ x: 80, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut', delay: 2.2 }}
+        transition={{ duration: 0.8, ease: 'easeOut', delay: 4.5 }}
       >
         <motion.div
           animate={{
@@ -211,7 +211,7 @@ export default function HeroSection() {
               'brightness(1)',
             ],
           }}
-          transition={{ delay: 3.0, duration: 0.4, ease: 'easeInOut' }}
+          transition={{ delay: 5.3, duration: 0.4, ease: 'easeInOut' }}
         >
           <Image
             src="/images/humanoid.png"
@@ -245,7 +245,7 @@ export default function HeroSection() {
           }}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 2.8, ease: 'easeOut' }}
+          transition={{ duration: 0.5, delay: 5.4, ease: 'easeOut' }}
         >
           Where Clinical Intelligence meets
         </motion.p>
@@ -270,7 +270,7 @@ export default function HeroSection() {
           }}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 2.95, ease: 'easeOut' }}
+          transition={{ duration: 0.5, delay: 5.55, ease: 'easeOut' }}
         >
           Physical AI in Healthcare
         </motion.p>
@@ -281,9 +281,9 @@ export default function HeroSection() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{
-            opacity: { duration: 0.3, delay: 3.15 },
+            opacity: { duration: 0.3, delay: 5.75 },
             scale: {
-              delay: 3.15,
+              delay: 5.75,
               type: 'spring',
               stiffness: 320,
               damping: 14,

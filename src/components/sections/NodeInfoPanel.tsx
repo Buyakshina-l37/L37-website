@@ -31,7 +31,7 @@ export default function NodeInfoPanel() {
     let interval: ReturnType<typeof setInterval>
     const timer = setTimeout(() => {
       interval = setInterval(() => setIdx(i => (i + 1) % NODES.length), 3000)
-    }, 4000)
+    }, 6200)
     return () => { clearTimeout(timer); clearInterval(interval) }
   }, [])
 

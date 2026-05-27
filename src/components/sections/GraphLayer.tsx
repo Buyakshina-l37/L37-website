@@ -427,7 +427,7 @@ export default function GraphLayer() {
               style={{ transformOrigin: `${n.x + n.size / 2}px ${n.y + n.size / 2}px` }}
               animate={{ scale: [1, 1.15, 1], filter: ['brightness(1)', 'brightness(1.5)', 'brightness(1)'] }}
               transition={{
-                delay: 3.5 + i * 0.3,
+                delay: 6.2 + i * 0.3,
                 duration: 1.5,
                 repeat: Infinity,
                 repeatDelay: 6.9,
@@ -498,7 +498,7 @@ export default function GraphLayer() {
           style={{ transformOrigin: '152px 207px' }}
           animate={{ scale: [1, 2], opacity: [0.6, 0] }}
           transition={{
-            delay: 3.5,
+            delay: 6.2,
             duration: 2,
             repeat: Infinity,
             repeatDelay: 1,
@@ -511,7 +511,7 @@ export default function GraphLayer() {
           style={{ transformOrigin: '152px 207px' }}
           animate={{ scale: [1, 1.15, 1], opacity: [1, 0.6, 1] }}
           transition={{
-            delay: 3.2,
+            delay: 5.8,
             duration: 2,
             repeat: Infinity,
             repeatType: 'reverse',

@@ -126,8 +126,7 @@ export default function OntologiesPanel() {
                 border: '0.8px solid rgba(113, 131, 153, 0.3)',
                 borderRadius: 2,
                 boxSizing: 'border-box',
-                background: isActive ? 'rgba(36, 115, 242, 0.06)' : 'transparent',
-                transition: 'background 0.3s ease',
+                background: 'transparent',
               }}
             >
               {/* Left: circle + label */}

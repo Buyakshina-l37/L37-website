@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import GraphLayer from './GraphLayer'
 import CardLive from './CardLive'
+import NodeInfoPanel from './NodeInfoPanel'
+import OntologiesPanel from './OntologiesPanel'
 
 /**
  * HeroSection — entrance animation in 6 phases (Framer Motion)
@@ -33,11 +35,8 @@ const CARDS = [
   { key: 'Temp', alt: 'Temperature',      left: 749, top: 330, w: 59, h: 36, amp: -6, floatDur: 3.0, pulseDelay: 6.2 },
 ]
 
-// ── UI panel data: position + stagger index ──────────────────────
-const PANELS = [
-  { src: '/images/node-info.svg',   alt: 'Node Info',   left: 1017, top: 102, w: 122, h: 108, layer: 'layerNodeInfo' },
-  { src: '/images/ontologies.svg',  alt: 'Ontologies',  left: 1228, top: 146, w: 112, h: 110, layer: 'layerOntologies' },
-]
+// ── UI panel positions ───────────────────────────────────────────
+// node-info: left 1017, top 102 — ontologies: left 1228, top 146
 
 // ── Query Log row positions (from Figma: frame 13071:5334) ──────
 // Panel: 112×110, rows within content-frame at y=19
@@ -154,21 +153,27 @@ export default function HeroSection() {
         <GraphLayer />
       </div>
 
-      {/* ─── Phase 4: UI panels — node-info + ontologies (slide up + fade) ─── */}
-      {PANELS.map((panel, i) => (
-        <motion.img
-          key={panel.src}
-          data-layer={panel.layer}
-          src={panel.src}
-          alt={panel.alt}
-          width={panel.w}
-          height={panel.h}
-          style={{ position: 'absolute', left: panel.left, top: panel.top, width: panel.w, height: panel.h }}
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1.8 + i * 0.15, ease: 'easeOut' }}
-        />
-      ))}
+      {/* ─── Phase 4: Node Info panel — slide up + fade, then cycling nodes ── */}
+      <motion.div
+        data-layer="layerNodeInfo"
+        style={{ position: 'absolute', left: 1017, top: 102 }}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.8, ease: 'easeOut' }}
+      >
+        <NodeInfoPanel />
+      </motion.div>
+
+      {/* ─── Phase 4: Ontologies panel — slide up + fade, then radio wave ─── */}
+      <motion.div
+        data-layer="layerOntologies"
+        style={{ position: 'absolute', left: 1228, top: 146 }}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.95, ease: 'easeOut' }}
+      >
+        <OntologiesPanel />
+      </motion.div>
 
       {/* ─── Phase 4: Query Log panel + highlight overlay (Task 3) ─── */}
       <motion.div

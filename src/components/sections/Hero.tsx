@@ -239,7 +239,7 @@ export default function HeroSection() {
             fontFamily: '"Denim TRIAL", sans-serif',
             fontWeight: 500,
             fontSize: '40px',
-            lineHeight: '48px',
+            lineHeight: '46px',
             color: 'rgba(12,22,41,0.8)',
             whiteSpace: 'nowrap',
           }}

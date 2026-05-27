@@ -245,7 +245,7 @@ export default function HeroSection() {
           }}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 5.4, ease: 'easeOut' }}
+          transition={{ duration: 0.5, delay: 4.5, ease: 'easeOut' }}
         >
           Where Clinical Intelligence meets
         </motion.p>
@@ -270,7 +270,7 @@ export default function HeroSection() {
           }}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 5.55, ease: 'easeOut' }}
+          transition={{ duration: 0.5, delay: 4.65, ease: 'easeOut' }}
         >
           Physical AI in Healthcare
         </motion.p>
@@ -281,9 +281,9 @@ export default function HeroSection() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{
-            opacity: { duration: 0.3, delay: 5.75 },
+            opacity: { duration: 0.3, delay: 4.85 },
             scale: {
-              delay: 5.75,
+              delay: 4.85,
               type: 'spring',
               stiffness: 320,
               damping: 14,

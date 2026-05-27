@@ -42,12 +42,9 @@ function RadioCircle({ active }: { active: boolean }) {
           stroke="#718399"
           strokeWidth="0.8"
           animate={{
-            fill:         active ? '#2473F2' : 'none',
-            stroke:       active ? '#2473F2' : '#718399',
-            strokeOpacity: active ? 1 : 0.7,
-            scale:        active ? 1.3 : 1,
+            fill:        active ? 'rgba(113,131,153,0.7)' : 'none',
+            strokeOpacity: active ? 0.7 : 0.7,
           }}
-          style={{ transformOrigin: '3.8px 3.8px' }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
         />
       </svg>

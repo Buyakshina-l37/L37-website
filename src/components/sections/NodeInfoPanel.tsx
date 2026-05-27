@@ -57,7 +57,7 @@ export default function NodeInfoPanel() {
 
       {/* ── Content box 13156:11629: bg white, border, p 8, gap 8 ── */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'transparent',
         border: '0.8px solid rgba(113, 131, 153, 0.3)',
         borderRadius: 2,
         padding: 8,

@@ -156,7 +156,7 @@ export default function HeroSection() {
       {/* ─── Phase 4: Node Info panel — slide up + fade, then cycling nodes ── */}
       <motion.div
         data-layer="layerNodeInfo"
-        style={{ position: 'absolute', left: 1017, top: 102 }}
+        style={{ position: 'absolute', left: 1017, top: 90 }}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.8, ease: 'easeOut' }}

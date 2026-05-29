@@ -24,7 +24,7 @@ export default function TeamCard({ name, role, photo }: TeamCardProps) {
       {/* Card — scale on hover, clips photo corners */}
       <div
         className="
-          group relative flex flex-col h-[429px] w-full rounded-[16px] overflow-hidden
+          group relative flex flex-col gap-[32px] h-[429px] w-full rounded-[16px] overflow-hidden
           bg-gradient-to-b from-[rgba(255,255,255,0.7)] to-white
           transition-transform duration-300 ease-out cursor-pointer
           hover:scale-[1.02]

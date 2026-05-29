@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const navLinks = ['Services', 'Company', 'Team', 'Careers', 'Blog', 'Contact Us']
+const navLinks = ['Services', 'Company', 'Team', /* 'Careers', 'Blog', */ 'Contact Us']
 
 const socialLinks = [
   { href: 'https://linkedin.com/company/l37-co/', icon: '/images/Button-social-media-in.svg', label: 'LinkedIn' },

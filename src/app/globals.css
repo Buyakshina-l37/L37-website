@@ -29,10 +29,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-gradient-highlight {
+    background: var(--gradient-text-highlight);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
 @layer base {
   html {
     font-family: 'Denim TRIAL', system-ui, sans-serif;
-    color: #0C1629;
+    color: #0A0F1A;
     background-color: #EBF0FA;
   }
 
@@ -40,8 +49,8 @@
     box-sizing: border-box;
   }
 
-  /* Courier Prime available as CSS variable for data-card numbers */
   :root {
     --font-courier-prime-fallback: 'Courier New', Courier, monospace;
+    --gradient-text-highlight: linear-gradient(90deg, #A1FFB6 0%, #2C8AFF 100%);
   }
 }

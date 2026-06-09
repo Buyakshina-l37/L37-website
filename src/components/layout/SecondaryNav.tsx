@@ -6,7 +6,7 @@ const sections = [
   { label: 'Vision',   href: '#vision' },
   { label: 'Solution', href: '#solution' },
   { label: 'Services', href: '#services' },
-  { label: 'Data',     href: '#data' },
+  { label: 'Technology', href: '#tech-stack' },
   { label: 'Partners', href: '#partners' },
 ]
 

@@ -12,7 +12,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0C1629', borderRadius: '24px 24px 0 0' }}>
+    <footer style={{ backgroundColor: '#0A0F1A', borderRadius: '24px 24px 0 0' }}>
       <div
         className="max-w-[1408px] mx-auto px-[80px]"
         style={{ paddingTop: '64px', paddingBottom: '48px' }}

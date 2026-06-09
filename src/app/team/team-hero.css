@@ -1,0 +1,35 @@
+/* ── Team Hero — fade-in image + staggered title reveal ─────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Image wrapper — overflow:hidden contains any scale bleed */
+.hero-image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Hero image — simple fade in */
+.hero-image {
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
+}
+
+/* Gradient overlay fades in so text stays readable */
+.hero-overlay {
+  animation: fadeIn 2s ease both;
+}
+
+/* Hero title — reveals upward after image fades in */
+.hero-title {
+  opacity: 0;
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+}

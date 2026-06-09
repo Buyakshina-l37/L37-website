@@ -19,7 +19,7 @@ export default function ContactPage() {
                 <h1 className="font-denim font-normal text-[64px] leading-[1.05] text-navy-base">
                   Contact <span className="text-primary-base">us</span>
                 </h1>
-                <p className="font-denim font-normal text-[18px] leading-[1.4] text-[rgba(12,22,41,0.8)]">
+                <p className="font-denim font-normal text-[18px] leading-[1.4] text-[rgba(10,15,26,0.8)]">
                   Whether you have a question about our services or need support, our team is ready to assist you.
                 </p>
               </div>

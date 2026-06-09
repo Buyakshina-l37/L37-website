@@ -240,7 +240,7 @@ export default function HeroSection() {
             fontWeight: 500,
             fontSize: '40px',
             lineHeight: '46px',
-            color: 'rgba(12,22,41,0.8)',
+            color: 'rgba(10,15,26,0.8)',
             whiteSpace: 'nowrap',
           }}
           initial={{ y: 20, opacity: 0 }}
@@ -298,7 +298,7 @@ export default function HeroSection() {
               justifyContent: 'center',
               width: 185,
               height: 56,
-              backgroundColor: '#0C1629',
+              backgroundColor: '#0A0F1A',
               borderRadius: '8px',
               fontFamily: '"Denim TRIAL", sans-serif',
               fontWeight: 500,

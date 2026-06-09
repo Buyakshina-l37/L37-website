@@ -53,7 +53,7 @@ function StatItem({ value, suffix, label, started }: {
       <div className="font-denim font-normal text-[80px] leading-[1.05] tracking-[-0.8px] text-navy-base">
         {count}{suffix}
       </div>
-      <p className="font-denim font-normal text-[18px] leading-[1.4] text-[rgba(12,22,41,0.6)]">
+      <p className="font-denim font-normal text-[18px] leading-[1.4] text-[rgba(10,15,26,0.6)]">
         {label}
       </p>
     </div>
@@ -88,7 +88,7 @@ export default function Stats() {
           <h2 className="font-denim font-normal text-[48px] leading-[1.15] text-navy-base text-center">
             We Analyze Billions Data Points
           </h2>
-          <p className="font-denim font-normal text-[20px] leading-[1.4] text-[rgba(12,22,41,0.8)] text-center max-w-[580px]">
+          <p className="font-denim font-normal text-[20px] leading-[1.4] text-[rgba(10,15,26,0.8)] text-center max-w-[580px]">
             At the core of our offering is robust and scalable analytics platform capable of managing vast and diverse health data.
           </p>
         </div>

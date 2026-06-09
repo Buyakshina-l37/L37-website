@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          base: '#0C1629',
-          80: 'rgba(12, 22, 41, 0.8)',
-          70: 'rgba(12, 22, 41, 0.7)',
-          60: 'rgba(12, 22, 41, 0.6)',
-          50: 'rgba(12, 22, 41, 0.5)',
-          30: 'rgba(12, 22, 41, 0.3)',
-          20: 'rgba(12, 22, 41, 0.2)',
-          5:  'rgba(12, 22, 41, 0.05)',
+          base: '#0A0F1A',
+          80: 'rgba(10, 15, 26, 0.8)',
+          70: 'rgba(10, 15, 26, 0.7)',
+          60: 'rgba(10, 15, 26, 0.6)',
+          50: 'rgba(10, 15, 26, 0.5)',
+          30: 'rgba(10, 15, 26, 0.3)',
+          20: 'rgba(10, 15, 26, 0.2)',
+          5:  'rgba(10, 15, 26, 0.05)',
         },
         primary: {
           base: '#2473F2',
@@ -83,6 +83,7 @@ const config: Config = {
       backgroundImage: {
         'card-gradient': 'linear-gradient(180deg, rgba(255,255,255,0.7) 0%, #FFFFFF 100%)',
         'dark-gradient': 'linear-gradient(180deg, #0E1322 0%, #0E1322 100%)',
+        'gradient-text-highlight': 'var(--gradient-text-highlight)',
       },
     },
   },

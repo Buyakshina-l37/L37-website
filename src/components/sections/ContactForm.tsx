@@ -76,6 +76,10 @@ export default function ContactForm() {
     setSubmitError('')
 
     try {
+      const hutk = document.cookie.match(/hubspotutk=([^;]+)/)?.[1] || '';
+      const pageUri = window.location.href;
+      const pageName = document.title;
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -88,8 +92,9 @@ export default function ContactForm() {
             { name: 'message', value: formData.message },
           ],
           context: {
-            pageUri: window.location.href,
-            pageName: 'Contact Us',
+            hutk,
+            pageUri,
+            pageName,
           },
         }),
       })
@@ -121,7 +126,7 @@ export default function ContactForm() {
           Get in touch with L37
         </h2>
         <p
-          className="font-denim font-normal text-[18px] text-[rgba(12,22,41,0.8)]"
+          className="font-denim font-normal text-[18px] text-[rgba(10,15,26,0.8)]"
           style={{ lineHeight: '1.4' }}
         >
           Thank you for your interest! One of our team members will reach out to you soon.
@@ -131,8 +136,8 @@ export default function ContactForm() {
   }
 
   const inputClass = (error?: string) =>
-    `w-full px-[16px] py-[12px] font-denim font-normal text-[16px] leading-[1.4] text-navy-base bg-white border rounded-[16px] outline-none transition-colors placeholder:text-[rgba(12,22,41,0.4)] focus:border-primary-base ${
-      error ? 'border-status-error' : 'border-[rgba(12,22,41,0.2)]'
+    `w-full px-[16px] py-[12px] font-denim font-normal text-[16px] leading-[1.4] text-navy-base bg-white border rounded-[16px] outline-none transition-colors placeholder:text-[rgba(10,15,26,0.4)] focus:border-primary-base ${
+      error ? 'border-status-error' : 'border-[rgba(10,15,26,0.2)]'
     }`
 
   return (
@@ -144,7 +149,7 @@ export default function ContactForm() {
       {/* First + Last name */}
       <div className="flex gap-[32px]">
         <div className="flex flex-col gap-[8px] flex-1">
-          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
+          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
             First Name
           </label>
           <input
@@ -159,7 +164,7 @@ export default function ContactForm() {
           )}
         </div>
         <div className="flex flex-col gap-[8px] flex-1">
-          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
+          <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
             Last Name
           </label>
           <input
@@ -177,7 +182,7 @@ export default function ContactForm() {
 
       {/* Email */}
       <div className="flex flex-col gap-[8px]">
-        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
+        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
           Email
         </label>
         <input
@@ -194,7 +199,7 @@ export default function ContactForm() {
 
       {/* Dropdown */}
       <div className="flex flex-col gap-[8px]" ref={dropdownRef}>
-        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
+        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
           What are you interested in?
         </label>
         <div className="relative">
@@ -203,13 +208,13 @@ export default function ContactForm() {
             type="button"
             onClick={() => setIsOpen(!isOpen)}
             className={`w-full flex items-center justify-between px-[24px] bg-white font-denim font-normal text-[16px] leading-[1.4] transition-colors ${
-              formData.interest ? 'text-navy-base' : 'text-[rgba(12,22,41,0.4)]'
+              formData.interest ? 'text-navy-base' : 'text-[rgba(10,15,26,0.4)]'
             }`}
             style={{
               borderRadius: '16px',
               border: errors.interest
                 ? '1px solid #BE0000'
-                : '1px solid rgba(12, 22, 41, 0.2)',
+                : '1px solid rgba(10, 15, 26, 0.2)',
               height: '56px',
             }}
           >
@@ -218,7 +223,7 @@ export default function ContactForm() {
               width="16" height="16" viewBox="0 0 16 16" fill="none"
               className={`transition-transform duration-200 shrink-0 ${isOpen ? 'rotate-180' : ''}`}
             >
-              <path d="M4 6L8 10L12 6" stroke="#0C1629" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M4 6L8 10L12 6" stroke="#0A0F1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 
@@ -239,10 +244,10 @@ export default function ContactForm() {
                     setFormData({ ...formData, interest: item })
                     setIsOpen(false)
                   }}
-                  className="w-full text-left px-[24px] py-[16px] font-denim font-normal text-[16px] leading-[1.4] text-navy-base hover:bg-[rgba(12,22,41,0.03)] transition-colors"
+                  className="w-full text-left px-[24px] py-[16px] font-denim font-normal text-[16px] leading-[1.4] text-navy-base hover:bg-[rgba(10,15,26,0.03)] transition-colors"
                   style={{
                     borderBottom: index < interests.length - 1
-                      ? '1px solid rgba(12, 22, 41, 0.08)'
+                      ? '1px solid rgba(10, 15, 26, 0.08)'
                       : 'none',
                   }}
                 >
@@ -259,7 +264,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="flex flex-col gap-[8px]">
-        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(12,22,41,0.8)]">
+        <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
           Message
         </label>
         <div className="relative">
@@ -271,7 +276,7 @@ export default function ContactForm() {
             onChange={e => setFormData({ ...formData, message: e.target.value })}
             className={`${inputClass(errors.message)} resize-none`}
           />
-          <span className="absolute bottom-[12px] right-[16px] font-denim text-[12px] text-[rgba(12,22,41,0.4)]">
+          <span className="absolute bottom-[12px] right-[16px] font-denim text-[12px] text-[rgba(10,15,26,0.4)]">
             {formData.message.length}/1000 Characters
           </span>
         </div>
@@ -281,7 +286,7 @@ export default function ContactForm() {
       </div>
 
       {/* Privacy note */}
-      <p className="font-denim font-normal text-[14px] leading-[1.4] text-[rgba(12,22,41,0.6)]">
+      <p className="font-denim font-normal text-[14px] leading-[1.4] text-[rgba(10,15,26,0.6)]">
         By submitting this form, your information will be processed in accordance with our{' '}
         <a href="/privacy-policy" className="underline text-primary-base">Privacy Policy</a>.
       </p>

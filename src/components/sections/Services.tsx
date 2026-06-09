@@ -62,17 +62,17 @@ function ServiceCard({
           {titleDark && (
             <>
               <br />
-              <span style={{ color: '#0C1629' }}>{titleDark}</span>
+              <span style={{ color: '#0A0F1A' }}>{titleDark}</span>
             </>
           )}
         </h3>
-        <p className="font-denim font-normal text-[18px] leading-[1.4] text-[rgba(12,22,41,0.8)]">
+        <p className="font-denim font-normal text-[18px] leading-[1.4] text-navy-80">
           {description}
         </p>
         <div className="flex justify-end">
           <div
             className="w-[32px] h-[32px] rounded-full flex items-center justify-center"
-            style={{ backgroundColor: '#0C1629' }}
+            style={{ backgroundColor: '#0A0F1A' }}
           >
             <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
               <path d="M1 1L6 6L1 11" stroke="#F5F7FC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -96,7 +96,7 @@ export default function Services() {
             <h2 className="font-denim font-normal text-[48px] leading-[1.15] text-navy-base text-center max-w-[741px]">
               Healthcare Intelligence at Your Fingertips
             </h2>
-            <p className="font-denim font-normal text-[20px] leading-[1.4] text-[rgba(12,22,41,0.8)] text-center max-w-[641px]">
+            <p className="font-denim font-normal text-[20px] leading-[1.4] text-navy-80 text-center max-w-[641px]">
               Our solutions combine exclusive data with human expertise, to deliver healthcare intelligence you can trust.
             </p>
           </div>

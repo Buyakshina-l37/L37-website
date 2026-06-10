@@ -10,11 +10,20 @@ const socialLinks = [
   { href: 'https://x.com/L37Healthcare', icon: '/images/Button-social-media-x.svg', label: 'X' },
 ]
 
+const navLinksMobile = [
+  { label: 'Services', href: '#' },
+  { label: 'Company', href: '#' },
+  { label: 'Team', href: '/team' },
+  { label: 'Contact Us', href: '/contact' },
+]
+
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#0A0F1A', borderRadius: '24px 24px 0 0' }}>
+
+      {/* ── Desktop ── */}
       <div
-        className="max-w-[1408px] mx-auto px-[80px]"
+        className="hidden md:block max-w-[1408px] mx-auto px-[80px]"
         style={{ paddingTop: '64px', paddingBottom: '48px' }}
       >
         {/* Верхня частина — лого + навігація */}
@@ -72,8 +81,123 @@ export default function Footer() {
             ))}
           </div>
         </div>
-
       </div>
+
+      {/* ── Mobile ── */}
+      <div
+        className="md:hidden"
+        style={{ padding: '60px 60px 40px' }}
+      >
+        {/* Logo */}
+        <Image
+          src="/images/logo/l37-logo-white.svg"
+          alt="L37"
+          width={131}
+          height={73}
+          priority
+        />
+
+        {/* Nav links — 2 columns */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            columnGap: '0px',
+            rowGap: '24px',
+            marginTop: '60px',
+          }}
+        >
+          {navLinksMobile.map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
+              style={{
+                fontFamily: '"Denim TRIAL", sans-serif',
+                fontWeight: 400,
+                fontSize: '20px',
+                lineHeight: 1.4,
+                color: '#F5F7FC',
+                textDecoration: 'none',
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Social icons */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginTop: '80px' }}>
+          {socialLinks.map(({ href, icon, label }) => (
+            <Link
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'flex', width: '40px', height: '40px', flexShrink: 0 }}
+            >
+              <Image src={icon} alt={label} width={40} height={40} />
+            </Link>
+          ))}
+        </div>
+
+        {/* Legal row */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '16px',
+            marginTop: '24px',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: '"Denim TRIAL", sans-serif',
+              fontWeight: 500,
+              fontSize: '12px',
+              lineHeight: 1.4,
+              letterSpacing: '0.36px',
+              textTransform: 'uppercase',
+              color: 'rgba(245,247,252,0.5)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            L37.co © 2026 L37 Inc
+          </span>
+          <Link
+            href="#"
+            style={{
+              fontFamily: '"Denim TRIAL", sans-serif',
+              fontWeight: 500,
+              fontSize: '12px',
+              lineHeight: 1.4,
+              letterSpacing: '0.36px',
+              textTransform: 'uppercase',
+              color: 'rgba(245,247,252,0.5)',
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Terms of Service
+          </Link>
+          <Link
+            href="#"
+            style={{
+              fontFamily: '"Denim TRIAL", sans-serif',
+              fontWeight: 500,
+              fontSize: '12px',
+              lineHeight: 1.4,
+              letterSpacing: '0.36px',
+              textTransform: 'uppercase',
+              color: 'rgba(245,247,252,0.5)',
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
+
     </footer>
   )
 }

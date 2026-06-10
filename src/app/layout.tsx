@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Courier_Prime, Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/layout/Navbar'
+import NavMobile from '@/components/layout/NavMobile'
 
 const courierPrime = Courier_Prime({
   subsets: ['latin'],
@@ -28,7 +30,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${courierPrime.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="hidden md:block">
+          <Navbar />
+        </div>
+        <div className="md:hidden">
+          <NavMobile />
+        </div>
+        {children}
+      </body>
     </html>
   )
 }

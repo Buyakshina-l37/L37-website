@@ -1,12 +1,10 @@
 import Image from 'next/image'
-import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ContactForm from '@/components/sections/ContactForm'
 
 export default function ContactPage() {
   return (
     <>
-      <Navbar />
       <main className="bg-light-strong pt-[90px]">
         <div className="max-w-[1408px] mx-auto px-[80px] py-[140px]">
           <div className="grid grid-cols-2 gap-[80px] items-start">

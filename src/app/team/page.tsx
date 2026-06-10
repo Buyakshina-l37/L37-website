@@ -1,4 +1,3 @@
-import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import TeamCard from '@/components/sections/TeamCard'
 import Image from 'next/image'
@@ -100,8 +99,6 @@ export const metadata = {
 export default function TeamPage() {
   return (
     <>
-      <Navbar />
-
       <main className="bg-[#f5f7fc] pt-[90px]">
 
         {/* ── Hero section ── photo + gradient + title bottom-left ── */}

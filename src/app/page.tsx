@@ -1,5 +1,3 @@
-import Navbar from '@/components/layout/Navbar'
-import NavMobile from '@/components/layout/NavMobile'
 import SecondaryNav from '@/components/layout/SecondaryNav'
 import Hero from '@/components/sections/Hero'
 import HeroMobile from '@/components/sections/HeroMobile'
@@ -16,11 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="hidden md:block">
-        <Navbar />
         <SecondaryNav />
-      </div>
-      <div className="md:hidden">
-        <NavMobile />
       </div>
       <main>
         {/* Hero wrapper: accounts for fixed 90px navbar + horizontal page margins */}

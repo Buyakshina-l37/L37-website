@@ -113,8 +113,8 @@ export default function HeroSection() {
   }, [])
 
   return (
-    // Wrapper compensates the collapsed height after scale and clips overflow
-    <div style={{ width: '100%', overflow: 'hidden', height: `${DESIGN_H * scale}px` }}>
+    // Wrapper compensates the collapsed height after scale, centres the scaled container
+    <div style={{ width: '100%', overflow: 'hidden', display: 'flex', justifyContent: 'center', height: `${DESIGN_H * scale}px` }}>
     <section
       id="hero-section"
       aria-label="Hero"
@@ -125,7 +125,7 @@ export default function HeroSection() {
         borderRadius: '24px',
         backgroundColor: '#D1D6E1',
         overflow: 'hidden',
-        transformOrigin: 'top left',
+        transformOrigin: 'top center',
         transform: `scale(${scale})`,
       }}
     >

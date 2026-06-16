@@ -232,7 +232,7 @@ export default function TechStackMobile() {
     <section
       style={{
         backgroundColor: '#0A0F1A',
-        borderRadius: '16px',
+        borderRadius: '0 0 16px 16px',
         overflow: 'hidden',
         paddingBottom: '60px',
       }}

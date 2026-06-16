@@ -142,8 +142,7 @@ export default function ContactForm() {
 
   return (
     <div
-      className="bg-white rounded-[16px] p-[24px] md:p-[40px] flex flex-col gap-[24px]"
-      style={{ boxShadow: '0px 20px 48px -8px rgba(0, 11, 223, 0.06)' }}
+      className="md:bg-white md:rounded-[16px] px-[20px] py-0 md:p-[40px] flex flex-col gap-[24px] md:shadow-[0px_20px_48px_-8px_rgba(0,11,223,0.06)]"
     >
 
       {/* First + Last name */}

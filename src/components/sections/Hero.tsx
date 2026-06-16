@@ -8,6 +8,9 @@ import CardLive from './CardLive'
 import NodeInfoPanel from './NodeInfoPanel'
 import OntologiesPanel from './OntologiesPanel'
 
+const DESIGN_W = 1608
+const DESIGN_H = 755
+
 /**
  * HeroSection — entrance animation in 6 phases (Framer Motion)
  *
@@ -100,19 +103,30 @@ function QueryLogHighlight() {
 }
 
 export default function HeroSection() {
+  const [scale, setScale] = useState(1)
+
+  useEffect(() => {
+    const update = () => setScale(Math.min(1, window.innerWidth / DESIGN_W))
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
+
   return (
+    // Wrapper compensates the collapsed height after scale and clips overflow
+    <div style={{ width: '100%', overflow: 'hidden', height: `${DESIGN_H * scale}px` }}>
     <section
       id="hero-section"
       aria-label="Hero"
       style={{
         position: 'relative',
-        width: '100%',
-        maxWidth: '1609px',
-        height: '755px',
+        width: `${DESIGN_W}px`,
+        height: `${DESIGN_H}px`,
         borderRadius: '24px',
         backgroundColor: '#D1D6E1',
         overflow: 'hidden',
-        margin: '0 auto',
+        transformOrigin: 'top left',
+        transform: `scale(${scale})`,
       }}
     >
 
@@ -314,5 +328,6 @@ export default function HeroSection() {
       </div>
 
     </section>
+    </div>
   )
 }

@@ -116,7 +116,7 @@ export default function ContactForm() {
   if (isSuccess) {
     return (
       <div
-        className="bg-white rounded-[16px] p-[60px] flex flex-col gap-[24px]"
+        className="bg-white rounded-[16px] p-[24px] md:p-[60px] flex flex-col gap-[24px]"
         style={{ boxShadow: '0px 20px 48px -8px rgba(0, 11, 223, 0.06)' }}
       >
         <h2
@@ -142,12 +142,12 @@ export default function ContactForm() {
 
   return (
     <div
-      className="bg-white rounded-[16px] p-[40px] flex flex-col gap-[24px]"
+      className="bg-white rounded-[16px] p-[24px] md:p-[40px] flex flex-col gap-[24px]"
       style={{ boxShadow: '0px 20px 48px -8px rgba(0, 11, 223, 0.06)' }}
     >
 
       {/* First + Last name */}
-      <div className="flex gap-[32px]">
+      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[32px]">
         <div className="flex flex-col gap-[8px] flex-1">
           <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
             First Name

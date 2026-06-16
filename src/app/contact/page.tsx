@@ -6,18 +6,18 @@ export default function ContactPage() {
   return (
     <>
       <main className="pt-[90px]" style={{ backgroundColor: '#F2F5FA', minHeight: '100vh' }}>
-        <div className="max-w-[1408px] mx-auto px-[80px] py-[140px]">
-          <div className="grid grid-cols-2 gap-[80px] items-start">
+        <div className="max-w-[1408px] mx-auto px-[20px] py-[60px] md:px-[80px] md:py-[140px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[48px] md:gap-[80px] items-start">
 
             {/* Ліва колонка */}
             <div className="flex flex-col gap-[80px]">
 
               {/* Заголовок */}
               <div className="flex flex-col gap-[24px]">
-                <h1 className="font-denim font-normal text-[64px] leading-[1.05] text-navy-base">
+                <h1 className="font-denim font-normal text-[40px] md:text-[64px] leading-[1.05] text-navy-base">
                   Contact <span className="text-primary-base">us</span>
                 </h1>
-                <p className="font-denim font-normal text-[18px] leading-[1.4] text-[rgba(10,15,26,0.8)]">
+                <p className="font-denim font-normal text-[17px] md:text-[18px] leading-[1.4] text-[rgba(10,15,26,0.8)]">
                   Whether you have a question about our services or need support, our team is ready to assist you.
                 </p>
               </div>

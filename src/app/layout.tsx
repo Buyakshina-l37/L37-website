@@ -18,9 +18,32 @@ const inter = Inter({
   display: 'swap',
 })
 
+// TODO: replace /images/hero-bg.png with a dedicated /images/og-image.png (1200×630)
 export const metadata: Metadata = {
-  title: 'L37 — Expert-Verified Data into Ironclad AI for Healthcare',
-  description: 'L37 transforms expert-verified data into ironclad AI for healthcare.',
+  title: 'L37: Physical AI, Agentic AI & Clinical AI — One Integrated Platform',
+  description: 'L37 builds healthcare-native digital twins for hospital robot training, simulation and regulatory validation.',
+  metadataBase: new URL('https://l37.co'),
+  openGraph: {
+    title: 'L37: Physical AI, Agentic AI & Clinical AI — One Integrated Platform',
+    description: 'L37 builds healthcare-native digital twins for hospital robot training, simulation and regulatory validation.',
+    url: 'https://l37.co',
+    siteName: 'L37',
+    images: [
+      {
+        url: '/images/hero-bg.png',
+        width: 1200,
+        height: 630,
+        alt: 'L37 — Physical AI for Healthcare',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'L37: Physical AI, Agentic AI & Clinical AI — One Integrated Platform',
+    description: 'L37 builds healthcare-native digital twins for hospital robot training, simulation and regulatory validation.',
+    images: ['/images/hero-bg.png'],
+  },
 }
 
 export default function RootLayout({

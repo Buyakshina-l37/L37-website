@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navLinks = [
-  { label: 'Services',    href: '#' },
+  // { label: 'Services',    href: '#' }, // hidden for now
   { label: 'Company',     href: '#' },
   { label: 'Team',        href: '/team' },
   { label: 'Contact Us',  href: '/contact' },
@@ -24,8 +24,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Меню — абсолютний центр */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center" style={{ gap: '32px' }}>
+        {/* Меню — right-aligned, matching logo's left px-8 offset */}
+        <div className="ml-auto flex items-center" style={{ gap: '32px' }}>
           {navLinks.map(({ label, href }) => (
             <Link
               key={label}

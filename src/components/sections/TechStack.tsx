@@ -7,8 +7,8 @@ const ORBIT_SIZE = 680
 export default function TechStack() {
   return (
     <section
-      className="mx-[16px] rounded-[16px] overflow-hidden"
-      style={{ backgroundColor: '#0A0F1A' }}
+      className="mx-[16px] overflow-hidden"
+      style={{ backgroundColor: '#0A0F1A', borderRadius: '0 0 16px 16px' }}
     >
       {/* ── Zone 1: Hero — left text + right orbit-rings ── */}
       <div className="max-w-[1608px] mx-auto px-[120px] pt-[140px] pb-0 relative">

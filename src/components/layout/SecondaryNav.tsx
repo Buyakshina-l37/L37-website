@@ -3,15 +3,14 @@
 import { useEffect, useState } from 'react'
 
 const sections = [
-  { label: 'Vision',   href: '#vision' },
-  { label: 'Solution', href: '#solution' },
-  { label: 'Services', href: '#services' },
-  { label: 'Technology', href: '#tech-stack' },
-  { label: 'Partners', href: '#partners' },
+  { label: 'Solution',    href: '#solution' },
+  { label: 'OEM Program', href: '#oem-program' },
+  { label: 'Technology',  href: '#technology' },
+  { label: 'Workflow',    href: '#workflow' },
 ]
 
 export default function SecondaryNav() {
-  const [active, setActive] = useState('Vision')
+  const [active, setActive] = useState('Solution')
 
   useEffect(() => {
     const observers: IntersectionObserver[] = []

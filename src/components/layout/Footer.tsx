@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const navLinks = ['Services', 'Company', 'Team', /* 'Careers', 'Blog', */ 'Contact Us']
+const navLinks = [/* 'Services', // hidden for now */ 'Company', 'Team', /* 'Careers', 'Blog', */ 'Contact Us']
 
 const socialLinks = [
   { href: 'https://linkedin.com/company/l37-co/', icon: '/images/Button-social-media-in.svg', label: 'LinkedIn' },
@@ -55,13 +55,13 @@ export default function Footer() {
               L37.CO © 2026 L37 INC
             </span>
             <Link
-              href="#"
+              href="/terms-of-service"
               className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(245,247,252,0.5)] hover:text-light-base transition-colors"
             >
               Terms of Service
             </Link>
             <Link
-              href="#"
+              href="/privacy-policy"
               className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(245,247,252,0.5)] hover:text-light-base transition-colors"
             >
               Privacy Policy
@@ -164,7 +164,7 @@ export default function Footer() {
             L37.co © 2026 L37 Inc
           </span>
           <Link
-            href="#"
+            href="/terms-of-service"
             style={{
               fontFamily: '"Denim TRIAL", sans-serif',
               fontWeight: 500,
@@ -180,7 +180,7 @@ export default function Footer() {
             Terms of Service
           </Link>
           <Link
-            href="#"
+            href="/privacy-policy"
             style={{
               fontFamily: '"Denim TRIAL", sans-serif',
               fontWeight: 500,

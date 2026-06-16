@@ -1,0 +1,39 @@
+export default function Pediatric() {
+  return (
+    <div className="flex gap-[130px] items-center w-full">
+      {/* Left: image placeholder */}
+      <div
+        className="flex-shrink-0 rounded-[16px]"
+        style={{ width: 610, height: 453, background: '#e9ebf1' }}
+      />
+
+      {/* Right: text column */}
+      <div className="flex flex-col gap-[48px]" style={{ width: 610 }}>
+        {/* Heading */}
+        <h2
+          className="flex flex-col"
+          style={{ fontSize: 48, fontWeight: 500, lineHeight: 1.15, letterSpacing: '-0.48px' }}
+        >
+          <span className="text-gradient-highlight">Starting in Pediatric Units,</span>
+          <span className="text-[rgba(10,15,26,0.9)]">
+            L37 Builds a Unique Range of Digital and Physical Robots
+          </span>
+        </h2>
+
+        {/* Body */}
+        <div style={{ fontSize: 20, fontWeight: 400, lineHeight: 1.4, color: 'rgba(10,15,26,0.8)' }}>
+          <p style={{ marginBottom: 20 }}>
+            L37 integrates and orchestrates a unique range of healthcare robots — social, nurse,
+            rehabilitation, MD-assisting and other logistics solutions — starting in pediatric units
+            and divisions.
+          </p>
+          <p>
+            Each is driven by agentic AI and a shared clinical ontology, and validated in a digital
+            twin before it reaches the ward. Robots are then deployed safely on clinical-grade edge
+            hardware.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}

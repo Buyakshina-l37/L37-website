@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import SimulationOverlay from './TechStackCarousel/SimulationOverlay'
 
@@ -130,36 +130,14 @@ function SlideImage({ src, alt }: { src: string | null; alt: string }) {
 export default function TechStackCarousel() {
   const [active, setActive] = useState(0)
   const [animated, setAnimated] = useState(true)
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const goTo = (index: number, withAnimation = true) => {
     setAnimated(withAnimation)
     setActive(index)
   }
 
-  const resetTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current)
-    timerRef.current = setInterval(() => {
-      setActive(i => {
-        if (i >= slides.length - 1) {
-          // Jump to first instantly (no backward animation)
-          setAnimated(false)
-          setTimeout(() => setAnimated(true), 50)
-          return 0
-        }
-        setAnimated(true)
-        return i + 1
-      })
-    }, 4000)
-  }
-
-  useEffect(() => {
-    resetTimer()
-    return () => { if (timerRef.current) clearInterval(timerRef.current) }
-  }, [])
-
-  const prev = () => { goTo((active - 1 + slides.length) % slides.length); resetTimer() }
-  const next = () => { goTo((active + 1) % slides.length); resetTimer() }
+  const prev = () => { goTo((active - 1 + slides.length) % slides.length) }
+  const next = () => { goTo((active + 1) % slides.length) }
 
   return (
     <div className="mt-[80px]">
@@ -249,7 +227,7 @@ export default function TechStackCarousel() {
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => { goTo(i); resetTimer() }}
+              onClick={() => { goTo(i) }}
               aria-label={`Go to slide ${i + 1}`}
               className="transition-all duration-300"
               style={{

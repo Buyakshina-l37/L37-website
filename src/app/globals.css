@@ -43,6 +43,7 @@
     font-family: 'Denim TRIAL', system-ui, sans-serif;
     color: #0A0F1A;
     background-color: #EBF0FA;
+    scroll-behavior: smooth;
   }
 
   * {
@@ -51,6 +52,6 @@
 
   :root {
     --font-courier-prime-fallback: 'Courier New', Courier, monospace;
-    --gradient-text-highlight: linear-gradient(90deg, #A1FFB6 0%, #2C8AFF 100%);
+    --gradient-text-highlight: linear-gradient(90deg, #1964df 23.97%, #1eb995 78.84%);
   }
 }

@@ -48,8 +48,8 @@ const CARDS = [
   },
 ]
 
-// Figma: linear-gradient(132.406deg, …)
-const CARD_BG = 'linear-gradient(132.406deg, rgb(214,229,255) 0%, rgb(232,245,239) 100%)'
+// Figma: gradient/bg/card — confirmed via get_design_context on node 9473:3848
+const CARD_BG = 'linear-gradient(132.406deg, #D6E5FF 0%, #E8F5EF 100%)'
 
 // Scroll amount per button click = one card width + gap
 const SCROLL_STEP = 411 + 24 // 435 px

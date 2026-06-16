@@ -42,7 +42,7 @@
   html {
     font-family: 'Denim TRIAL', system-ui, sans-serif;
     color: #0A0F1A;
-    background-color: #EBF0FA;
+    background-color: #F5F7FC; /* Figma token: light/base */
     scroll-behavior: smooth;
   }
 

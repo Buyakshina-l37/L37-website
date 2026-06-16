@@ -5,7 +5,7 @@ import ContactForm from '@/components/sections/ContactForm'
 export default function ContactPage() {
   return (
     <>
-      <main className="bg-light-strong pt-[90px]">
+      <main className="pt-[90px]" style={{ backgroundColor: '#F2F5FA', minHeight: '100vh' }}>
         <div className="max-w-[1408px] mx-auto px-[80px] py-[140px]">
           <div className="grid grid-cols-2 gap-[80px] items-start">
 

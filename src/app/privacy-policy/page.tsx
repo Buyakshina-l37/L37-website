@@ -3,6 +3,7 @@
 // Typography: title 56px medium, h3 36px regular #0a0f1a, body 16px regular #3e4554 tracking-[0.32px]
 
 import Footer from '@/components/layout/Footer'
+import '../legal-pages.css'
 
 // ── Shared style constants ─────────────────────────────────────────────────
 const BODY: React.CSSProperties = {
@@ -72,10 +73,11 @@ function Section({ heading, children }: { heading: string; children: React.React
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <main style={{ backgroundColor: '#f5f7fc', paddingTop: 90, paddingBottom: 120 }}>
+      <main className="legal-main" style={{ backgroundColor: '#f5f7fc', paddingTop: 90, paddingBottom: 120 }}>
 
         {/* Single centred column — title and body share the same 900px container */}
         <div
+          className="legal-container"
           style={{
             width: 900,
             margin: '80px auto 0',

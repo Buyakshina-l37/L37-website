@@ -3,6 +3,7 @@
 // Typography: title 48px regular #01012f, h3/h4 24px medium #0a0f1a, body 16px regular #3e4554 leading-[1.55]
 
 import Footer from '@/components/layout/Footer'
+import '../legal-pages.css'
 
 // ── Shared style constants ─────────────────────────────────────────────────
 const BODY: React.CSSProperties = {
@@ -61,10 +62,11 @@ function Section({ heading, children }: { heading?: string; children: React.Reac
 export default function TermsOfServicePage() {
   return (
     <>
-      <main style={{ backgroundColor: '#f5f7fc', paddingTop: 90, paddingBottom: 120 }}>
+      <main className="legal-main" style={{ backgroundColor: '#f5f7fc', paddingTop: 90, paddingBottom: 120 }}>
 
         {/* Single centred column — title and body share the same 900px container */}
         <div
+          className="legal-container"
           style={{
             width: 900,
             margin: '80px auto 0',

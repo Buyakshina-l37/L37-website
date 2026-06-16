@@ -163,13 +163,13 @@ export default function TeamPage() {
             style={{ maxWidth: '1148px' }}
           >
             <h2
-              className="font-denim font-normal text-[32px] md:text-[48px] text-navy-base"
+              className="font-denim font-normal text-[32px] md:text-[48px] text-navy-base md:w-[461px] md:shrink-0"
               style={{ lineHeight: '1.15' }}
             >
               Deep expertise.<br />Close-knit by choice.
             </h2>
             <p
-              className="font-denim font-normal text-[17px] md:text-[20px] leading-[1.4] text-navy-80"
+              className="font-denim font-normal text-[17px] md:text-[20px] leading-[1.4] text-navy-80 md:shrink-0 md:w-[483px]"
             >
               A team that has spent careers understanding how clinical environments actually work, what breaks when simulation meets reality, and how healthcare organisations make decisions. We came to Physical AI from healthcare — not the other way around.
             </p>

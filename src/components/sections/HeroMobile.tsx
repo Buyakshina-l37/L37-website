@@ -127,7 +127,7 @@ export default function HeroMobile() {
             textDecoration: 'none',
           }}
         >
-          Watch demo
+          Request a demo
         </Link>
       </motion.div>
 

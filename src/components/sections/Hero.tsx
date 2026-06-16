@@ -308,7 +308,7 @@ export default function HeroSection() {
               textDecoration: 'none',
             }}
           >
-            Watch demo
+            Request a demo
           </Link>
         </motion.div>
       </div>

@@ -105,13 +105,13 @@ export default function TeamPage() {
         {/* Figma node 12544:5843: h-460, rounded-24, max-w-1609 */}
         {/* Gradient: bottom 166px, rgba(0,0,0,0)→rgba(0,0,0,0.6) */}
         {/* Title: Denim WD Regular 64px, white, left-120 bottom-60 */}
-        <div className="px-[16px] py-[24px]">
+        <div className="md:px-[16px] md:py-[24px] px-[16px] py-[16px]">
           <section
-            className="relative max-w-[1609px] mx-auto rounded-[24px] overflow-hidden"
+            className="hero-section relative max-w-[1609px] mx-auto overflow-hidden md:rounded-[24px]"
             style={{ height: '460px' }}
           >
-            {/* Background photo — wrapper carries the clip-path reveal + diagonal edge ::after */}
-            <div className="hero-image-wrapper">
+            {/* Background photo — desktop (hidden on mobile) */}
+            <div className="hero-image-wrapper hidden md:block">
               <Image
                 src="/images/team-hero.png"
                 alt="L37 Team"
@@ -119,6 +119,18 @@ export default function TeamPage() {
                 className="object-cover object-center pointer-events-none hero-image"
                 priority
                 sizes="1609px"
+              />
+            </div>
+
+            {/* Background photo — mobile */}
+            <div className="hero-image-wrapper block md:hidden">
+              <Image
+                src="/images/team-hero-mobi.png"
+                alt="L37 Team"
+                fill
+                className="object-cover object-top pointer-events-none hero-image"
+                priority
+                sizes="390px"
               />
             </div>
 
@@ -131,9 +143,9 @@ export default function TeamPage() {
               }}
             />
 
-            {/* Title — Denim WD Regular 64px, white, bottom-left */}
+            {/* Title — Denim WD Regular 64px desktop / 40px mobile, white, bottom-left */}
             <h1
-              className="hero-title absolute font-denim-wd font-normal text-[64px] text-white whitespace-nowrap"
+              className="hero-title absolute font-denim-wd font-normal text-white"
               style={{ lineHeight: '1.15', letterSpacing: '-0.64px', left: 120, bottom: 60 }}
             >
               L37 Team
@@ -145,20 +157,19 @@ export default function TeamPage() {
         {/* Figma node 13253:10009: flex row gap-190, left col w-461, right col w-483 */}
         {/* Title: Denim TRIAL Regular 48px, #0C1629, leading-1.15 */}
         {/* Body:  Denim TRIAL Regular 20px, navy-80, leading-1.4 */}
-        <div className="py-[140px]">
+        <div className="py-[60px] md:py-[140px]">
           <div
-            className="mx-auto px-[16px] flex gap-[190px] items-start"
+            className="mx-auto px-[20px] md:px-[16px] flex flex-col md:flex-row gap-[32px] md:gap-[190px] items-start"
             style={{ maxWidth: '1148px' }}
           >
             <h2
-              className="font-denim font-normal text-[48px] text-navy-base shrink-0"
-              style={{ lineHeight: '1.15', width: 461 }}
+              className="font-denim font-normal text-[32px] md:text-[48px] text-navy-base"
+              style={{ lineHeight: '1.15' }}
             >
               Deep expertise.<br />Close-knit by choice.
             </h2>
             <p
-              className="font-denim font-normal text-[20px] leading-[1.4] text-navy-80 shrink-0"
-              style={{ width: 483 }}
+              className="font-denim font-normal text-[17px] md:text-[20px] leading-[1.4] text-navy-80"
             >
               A team that has spent careers understanding how clinical environments actually work, what breaks when simulation meets reality, and how healthcare organisations make decisions. We came to Physical AI from healthcare — not the other way around.
             </p>
@@ -167,12 +178,12 @@ export default function TeamPage() {
 
         {/* ── Cards grid ───────────────────────────────────────────── */}
         {/* 3 cols × 340px + 2 × 48px gap = 1116px, centered */}
-        <div className="pb-[90px]">
+        <div className="pb-[60px] md:pb-[90px]">
           <div
-            className="mx-auto px-[16px]"
+            className="mx-auto px-[20px] md:px-[16px]"
             style={{ maxWidth: '1148px' }}
           >
-            <div className="grid grid-cols-3 gap-[48px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[48px]">
               {TEAM.map((member) => (
                 <TeamCard
                   key={`${member.name}-${member.role}`}

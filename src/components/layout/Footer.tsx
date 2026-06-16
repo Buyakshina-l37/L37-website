@@ -11,7 +11,6 @@ const socialLinks = [
 ]
 
 const navLinksMobile = [
-  { label: 'Services', href: '#' },
   { label: 'Company', href: '#' },
   { label: 'Team', href: '/team' },
   { label: 'Contact Us', href: '/contact' },

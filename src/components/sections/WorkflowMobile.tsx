@@ -75,19 +75,21 @@ export default function WorkflowMobile() {
             key={card.num}
             style={{
               width: '100%',
+              height: '328px',
               borderRadius: '16px',
-              padding: '32px 28px',
+              padding: '24px',
               backgroundImage: 'linear-gradient(220.898deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
-              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
           >
+            {/* Number — anchored to top */}
             <p
               style={{
-                position: 'absolute',
-                top: 24,
-                right: 28,
                 margin: 0,
+                alignSelf: 'flex-start',
                 fontFamily: '"Denim TRIAL", sans-serif',
                 fontWeight: 500,
                 fontSize: '18px',
@@ -98,31 +100,35 @@ export default function WorkflowMobile() {
             >
               {card.num}
             </p>
-            <p
-              style={{
-                margin: '0 0 16px',
-                fontFamily: '"Denim TRIAL", sans-serif',
-                fontWeight: 400,
-                fontSize: '28px',
-                lineHeight: 1.15,
-                letterSpacing: '-0.28px',
-                color: '#ffffff',
-              }}
-            >
-              {card.title}
-            </p>
-            <p
-              style={{
-                margin: 0,
-                fontFamily: '"Denim TRIAL", sans-serif',
-                fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: 1.4,
-                color: '#dbe5fc',
-              }}
-            >
-              {card.body}
-            </p>
+
+            {/* Title + body — anchored to bottom */}
+            <div style={{ marginTop: 'auto' }}>
+              <p
+                style={{
+                  margin: '0 0 12px',
+                  fontFamily: '"Denim TRIAL", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '28px',
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.28px',
+                  color: '#ffffff',
+                }}
+              >
+                {card.title}
+              </p>
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: '"Denim TRIAL", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: 1.4,
+                  color: '#dbe5fc',
+                }}
+              >
+                {card.body}
+              </p>
+            </div>
           </div>
         ))}
       </div>

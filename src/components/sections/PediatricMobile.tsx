@@ -1,19 +1,20 @@
 // Pediatric — mobile layout
 // Image on top, text below
 
+import Image from 'next/image'
+
 export default function PediatricMobile() {
   return (
     <section style={{ padding: '64px 20px', backgroundColor: '#F5F7FC' }}>
 
-      {/* Image placeholder */}
-      <div
-        style={{
-          width: '100%',
-          height: '260px',
-          borderRadius: '16px',
-          background: '#e9ebf1',
-          marginBottom: '40px',
-        }}
+      {/* Image */}
+      <Image
+        src="/images/sar-robot.png"
+        alt="SAR robot in pediatric care"
+        width={610}
+        height={453}
+        sizes="100vw"
+        style={{ borderRadius: '16px', width: '100%', height: 'auto', marginBottom: '40px' }}
       />
 
       {/* Heading */}

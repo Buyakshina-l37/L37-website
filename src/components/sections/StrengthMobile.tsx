@@ -75,13 +75,17 @@ export default function StrengthMobile() {
             key={card.title}
             style={{
               width: '100%',
+              height: '440px',
               borderRadius: '16px',
-              padding: '32px 28px',
+              padding: '24px',
               backgroundImage: 'linear-gradient(225.621deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
           >
-            {/* Icon */}
+            {/* Icon — anchored to top */}
             <div
               style={{
                 width: 52,
@@ -91,40 +95,40 @@ export default function StrengthMobile() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '24px',
+                alignSelf: 'flex-start',
               }}
             >
               <Image src={card.icon} alt={card.iconAlt} width={32} height={32} />
             </div>
 
-            {/* Title */}
-            <p
-              style={{
-                margin: '0 0 16px',
-                fontFamily: '"Denim TRIAL", sans-serif',
-                fontWeight: 400,
-                fontSize: '26px',
-                lineHeight: 1.15,
-                letterSpacing: '-0.26px',
-                color: '#ffffff',
-              }}
-            >
-              {card.title}
-            </p>
-
-            {/* Body */}
-            <p
-              style={{
-                margin: 0,
-                fontFamily: '"Denim TRIAL", sans-serif',
-                fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: 1.4,
-                color: '#dbe5fc',
-              }}
-            >
-              {card.body}
-            </p>
+            {/* Title + body — anchored to bottom */}
+            <div style={{ marginTop: 'auto' }}>
+              <p
+                style={{
+                  margin: '0 0 16px',
+                  fontFamily: '"Denim TRIAL", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '26px',
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.26px',
+                  color: '#ffffff',
+                }}
+              >
+                {card.title}
+              </p>
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: '"Denim TRIAL", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: 1.4,
+                  color: '#dbe5fc',
+                }}
+              >
+                {card.body}
+              </p>
+            </div>
           </div>
         ))}
       </div>

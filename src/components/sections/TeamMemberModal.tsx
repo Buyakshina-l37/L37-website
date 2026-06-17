@@ -45,32 +45,32 @@ export default function TeamMemberModal({
   }, [])
 
   return (
-    // Backdrop — fixed inset-0, z-100, navy 20% opacity, click-outside closes
-    // Mobile: items-end so modal slides up from bottom; desktop: items-center
+    // Backdrop — fixed inset-0, dark overlay, click-outside closes
     <div
-      className="fixed inset-0 z-[100] flex items-end md:items-center md:justify-center md:px-4 overflow-y-auto"
-      style={{ backgroundColor: 'rgba(10, 15, 26, 0.5)' }}
+      className="fixed inset-0 z-[100] flex items-center justify-center"
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
       onClick={onClose}
     >
       {/* Modal card
-          Mobile: full-width, max-height 92dvh, rounded top corners only, scrollable
-          Desktop: 1000px wide, fully rounded, fixed padding */}
+          Mobile: centered popup, calc(100% - 40px) wide, max-w 390px, auto height, max-h 90vh, scrollable
+          Desktop: 1000px wide, fixed padding */}
       <div
         className="
-          relative bg-[#f0f0f5] w-full overflow-y-auto
-          rounded-t-[24px] md:rounded-[16px]
-          p-[24px] pb-[40px] md:p-[48px]
-          max-h-[92dvh] md:max-h-none md:w-[1000px]
+          relative bg-[#f0f0f5] overflow-y-auto
+          rounded-[16px]
+          p-[24px] md:p-[48px]
+          w-[calc(100%-40px)] max-w-[390px] max-h-[90vh]
+          md:w-[1000px] md:max-w-none md:max-h-none
         "
         onClick={(e) => e.stopPropagation()}
       >
 
-        {/* ── Close button ── top 20 right 20 on mobile, top 32 right 32 on desktop */}
+        {/* ── Close button ── top-16 right-16 on mobile, top-32 right-32 on desktop */}
         <button
           onClick={onClose}
           className="absolute group size-[32px] rounded-full border-2 border-navy-base
                      flex items-center justify-center hover:bg-navy-base transition-colors
-                     top-[20px] right-[20px] md:top-[32px] md:right-[32px]"
+                     top-[16px] right-[16px] md:top-[32px] md:right-[32px]"
           aria-label="Close"
         >
           <svg
@@ -81,65 +81,71 @@ export default function TeamMemberModal({
           </svg>
         </button>
 
-        {/* ── Content: stacked on mobile, row on desktop ── */}
-        <div className="flex flex-col md:flex-row gap-[24px] md:gap-[48px] mt-[8px] md:mt-0">
+        {/* ── Content: stacked + centered on mobile, row on desktop ── */}
+        <div className="flex flex-col md:flex-row gap-[20px] md:gap-[48px] mt-[16px] md:mt-0">
 
-          {/* ── Photo ── full-width 200px tall on mobile, 230×250 on desktop */}
-          <div
-            className="relative rounded-[16px] overflow-hidden shrink-0 w-full h-[200px] md:w-[230px] md:h-[250px]"
-          >
-            {photo ? (
-              <Image
-                src={photo}
-                alt={name}
-                fill
-                className="object-cover object-top pointer-events-none"
-                sizes="(max-width: 768px) 100vw, 230px"
-              />
-            ) : (
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: [
-                    'linear-gradient(180deg, rgb(180,190,210) 0%, rgba(180,190,210,0.1) 100%)',
-                    'linear-gradient(90deg, rgb(240,240,245) 0%, rgb(240,240,245) 100%)',
-                  ].join(', '),
-                }}
-              />
-            )}
+          {/* ── Photo ──
+              Mobile: centered, ~60% modal width, height auto, rounded-[12px]
+              Desktop: 230×250, flex-shrink-0 */}
+          <div className="flex justify-center md:block md:shrink-0">
+            <div
+              className="relative rounded-[12px] md:rounded-[16px] overflow-hidden
+                         w-[60%] md:w-[230px] md:h-[250px]"
+            >
+              {photo ? (
+                <Image
+                  src={photo}
+                  alt={name}
+                  width={230}
+                  height={250}
+                  className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full object-cover object-top pointer-events-none"
+                  sizes="(max-width: 768px) 60vw, 230px"
+                />
+              ) : (
+                <div
+                  className="w-full aspect-[230/250]"
+                  style={{
+                    backgroundImage: [
+                      'linear-gradient(180deg, rgb(180,190,210) 0%, rgba(180,190,210,0.1) 100%)',
+                      'linear-gradient(90deg, rgb(240,240,245) 0%, rgb(240,240,245) 100%)',
+                    ].join(', '),
+                  }}
+                />
+              )}
+            </div>
           </div>
 
-          {/* ── Right column ── */}
+          {/* ── Right column (desktop) / full-width column (mobile) ── */}
           <div className="flex flex-col flex-1 min-w-0">
 
-            {/* Name + role */}
-            <div className="flex flex-col gap-[8px] md:gap-[12px]">
+            {/* Name + role — centered on mobile, left on desktop */}
+            <div className="flex flex-col gap-[6px] md:gap-[12px] text-center md:text-left">
               <h2
-                className="font-denim font-normal text-[24px] md:text-[32px] leading-[1.2]"
+                className="font-denim font-normal text-[22px] md:text-[32px] leading-[1.2]"
                 style={{ color: '#01012f' }}
               >
                 {name}
               </h2>
               <p
-                className="font-denim font-normal text-[14px] md:text-[16px] leading-[1.4] text-navy-70"
+                className="font-denim font-normal text-[13px] md:text-[16px] leading-[1.4] text-navy-70"
                 style={{ letterSpacing: '0.16px' }}
               >
                 {role}
               </p>
             </div>
 
-            {/* Bio */}
+            {/* Bio — 14px at all breakpoints */}
             {bio && (
               <p
-                className="font-denim font-normal text-[15px] md:text-[18px] leading-[1.5] md:leading-[1.4] text-navy-80 mt-[20px] md:mt-[32px]"
+                className="font-denim font-normal text-[14px] leading-[1.5] text-navy-80 mt-[16px] md:mt-[32px]"
               >
                 {bio}
               </p>
             )}
 
-            {/* Contact buttons */}
+            {/* Contact buttons — centered on mobile, left on desktop */}
             {(email || linkedin) && (
-              <div className="flex gap-[16px] md:gap-[24px] items-center mt-[20px] md:mt-[32px]">
+              <div className="flex gap-[16px] md:gap-[24px] items-center justify-center md:justify-start mt-[16px] md:mt-[32px]">
                 {email && (
                   <a
                     href={`mailto:${email}`}

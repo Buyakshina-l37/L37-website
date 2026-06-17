@@ -96,22 +96,27 @@ export default function OemProgramMobile() {
             key={card.title}
             style={{
               width: '100%',
+              height: '295px',
               borderRadius: '16px',
               overflow: 'hidden',
-              padding: '32px 28px',
+              padding: '24px',
               backgroundImage: 'linear-gradient(180deg, rgba(36,115,242,0.8) 0%, rgba(36,115,242,0.4) 100%)',
               border: '1px solid rgba(255,255,255,0.15)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
           >
             <p
               style={{
-                margin: '0 0 16px',
+                margin: 0,
                 fontFamily: '"Denim TRIAL", sans-serif',
                 fontWeight: 400,
                 fontSize: '26px',
                 lineHeight: 1.15,
                 letterSpacing: '-0.26px',
                 color: '#f5f7fc',
+                alignSelf: 'flex-start',
               }}
             >
               {card.title}
@@ -125,6 +130,7 @@ export default function OemProgramMobile() {
                 lineHeight: 1.4,
                 color: '#f5f7fc',
                 letterSpacing: '0.16px',
+                alignSelf: 'flex-end',
               }}
             >
               {card.body}

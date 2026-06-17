@@ -35,9 +35,9 @@ export default function PhysicalAIDigitalTwins() {
   const isInView = useInView(ref, { once: true, margin: '-80px 0px' })
 
   return (
-    <div ref={ref} className="flex items-start w-full" style={{ gap: 169 }}>
+    <div ref={ref} className="flex flex-col md:flex-row md:items-start w-full gap-[48px] md:gap-0">
       {/* ── Left: heading + steps ── */}
-      <div className="flex flex-col gap-[48px] flex-shrink-0" style={{ width: 580 }}>
+      <div className="flex flex-col gap-[48px] w-full md:w-[580px] md:flex-shrink-0 md:mr-[169px]">
         {/* Heading */}
         <div
           className="flex flex-col"
@@ -143,7 +143,8 @@ export default function PhysicalAIDigitalTwins() {
         alt="Digital Twin simulation"
         width={600}
         height={450}
-        className="flex-shrink-0 rounded-[16px] object-cover"
+        sizes="(max-width: 768px) 100vw, 600px"
+        className="w-full h-auto md:w-[600px] md:h-[450px] md:flex-shrink-0 rounded-[16px] object-cover"
       />
     </div>
   )

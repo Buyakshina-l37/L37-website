@@ -2,18 +2,19 @@ import Image from 'next/image'
 
 export default function Pediatric() {
   return (
-    <div className="flex gap-[130px] items-center w-full">
+    <div className="flex flex-col md:flex-row md:gap-[130px] md:items-center w-full gap-[48px]">
       {/* Left: image */}
       <Image
         src="/images/sar-robot.png"
         alt="SAR robot in pediatric care"
         width={610}
         height={453}
-        className="flex-shrink-0 rounded-[16px] object-cover"
+        sizes="(max-width: 768px) 100vw, 610px"
+        className="w-full h-auto md:w-[610px] md:h-[453px] md:flex-shrink-0 rounded-[16px] object-cover"
       />
 
       {/* Right: text column */}
-      <div className="flex flex-col gap-[48px]" style={{ width: 610 }}>
+      <div className="flex flex-col gap-[48px] w-full md:w-[610px]">
         {/* Heading */}
         <h2
           className="flex flex-col"

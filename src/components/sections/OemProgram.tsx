@@ -38,9 +38,11 @@ export default function OemProgram() {
       {/* Inner content — Figma: absolute left-[163px] top-[140px] w-[1281px] */}
       {/* Using proportional padding so content scales correctly at 1440px viewport */}
       <div
-        className="flex flex-col gap-[80px]"
         style={{ padding: '140px 10.15% 140px' }}
       >
+        {/* Centered inner container — max-width matches cards row (3×411 + 2×24 = 1281px)
+            so that the description right edge aligns with the cards row right edge */}
+        <div className="flex flex-col gap-[80px] mx-auto" style={{ maxWidth: 1281 }}>
 
         {/* ── Header block — Figma: flex-col gap-[23px] ── */}
         <div className="flex flex-col gap-[23px] w-full">
@@ -96,8 +98,8 @@ export default function OemProgram() {
           </div>
         </div>
 
-        {/* ── Cards row — Figma: flex gap-[24px] items-center ── */}
-        <div className="flex gap-[24px] items-center w-full">
+        {/* ── Cards row — centered within the 1281px wrapper ── */}
+        <div className="flex gap-[24px] items-center justify-center">
           {CARDS.map((card) => (
             // Figma: w-[411px] h-[346px] rounded-[16px] overflow-clip
             // bg: gradient-to-b from-[rgba(36,115,242,0.8)] to-[rgba(36,115,242,0.4)]
@@ -147,6 +149,7 @@ export default function OemProgram() {
           ))}
         </div>
 
+        </div>{/* end centered inner container */}
       </div>
     </div>
   )

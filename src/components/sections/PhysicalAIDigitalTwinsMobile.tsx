@@ -1,5 +1,6 @@
 'use client'
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 
 const STEPS = [
@@ -137,15 +138,14 @@ export default function PhysicalAIDigitalTwinsMobile() {
         })}
       </div>
 
-      {/* Image placeholder */}
-      <div
-        style={{
-          marginTop: '40px',
-          width: '100%',
-          height: '220px',
-          borderRadius: '16px',
-          background: 'rgba(10,15,26,0.05)',
-        }}
+      {/* Image */}
+      <Image
+        src="/images/digital-twin.png"
+        alt="Digital Twin simulation"
+        width={600}
+        height={450}
+        sizes="100vw"
+        style={{ marginTop: '40px', borderRadius: '16px', width: '100%', height: 'auto' }}
       />
 
     </section>

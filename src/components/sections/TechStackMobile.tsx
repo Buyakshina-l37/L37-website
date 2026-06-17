@@ -348,9 +348,8 @@ export default function TechStackMobile() {
             color: '#DBE5FC',
           }}
         >
-          No mixed vendors. No architectural compromises. L37 runs end-to-end on NVIDIA
-          infrastructure — the only healthcare AI company to deploy Omniverse, Isaac, NIM,
-          RIVA, Thor, and Jetson in a single unified clinical stack.
+          Simulate, validate and deploy on one integrated stack — where agentic AI, real-world
+          data and a knowledge-graph backbone keep digital twin and reality continuously in sync.
         </p>
       </div>
 

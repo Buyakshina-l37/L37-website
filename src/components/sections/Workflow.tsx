@@ -25,7 +25,41 @@ const CARDS = [
   },
 ]
 
-const CARD_BG = 'linear-gradient(220.898deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)'
+const CARD_BG = 'linear-gradient(223.885deg, rgba(255,255,255,0.05) 1.6434%, rgba(255,255,255,0.02) 98.44%)'
+
+const numStyle = {
+  fontSize: 24,
+  fontWeight: 500,
+  lineHeight: 1.25,
+  letterSpacing: '-0.24px',
+  color: '#2473f2',
+  textAlign: 'right' as const,
+  width: '100%',
+}
+const titleStyle = {
+  fontSize: 36,
+  fontWeight: 400,
+  lineHeight: 1.15,
+  letterSpacing: '-0.36px',
+  color: '#ffffff',
+  width: '100%',
+}
+const bodyStyle = {
+  fontSize: 20,
+  fontWeight: 400,
+  lineHeight: 1.4,
+  color: '#dbe5fc',
+  width: '100%',
+}
+const cardBase = {
+  width: 411,
+  height: 438,
+  padding: 48,
+  backgroundImage: CARD_BG,
+  border: '1px solid rgba(255,255,255,0.12)',
+  borderRadius: 16,
+  flexShrink: 0,
+}
 
 export default function Workflow() {
   return (
@@ -50,70 +84,44 @@ export default function Workflow() {
           </div>
           <p
             className="text-center whitespace-nowrap"
-            style={{
-              fontSize: 48,
-              fontWeight: 400,
-              lineHeight: 1.15,
-              letterSpacing: '-0.48px',
-              color: '#f5f7fc',
-            }}
+            style={{ fontSize: 48, fontWeight: 400, lineHeight: 1.15, letterSpacing: '-0.48px', color: '#f5f7fc' }}
           >
             What is the Process?
           </p>
         </div>
 
-        {/* Cards row — items-stretch so all cards match the tallest */}
-        <div className="flex gap-[24px] items-stretch w-full">
-          {CARDS.map((card) => (
-            <div
-              key={card.num}
-              className="flex-1 rounded-[16px] overflow-hidden flex flex-col justify-between"
-              style={{
-                padding: 48,
-                backgroundImage: CARD_BG,
-                border: '1px solid rgba(255,255,255,0.12)',
-              }}
-            >
-              {/* Number — top right */}
-              <p
-                className="text-right whitespace-nowrap"
-                style={{
-                  fontSize: 24,
-                  fontWeight: 500,
-                  lineHeight: 1.25,
-                  letterSpacing: '-0.24px',
-                  color: '#2473f2',
-                }}
-              >
-                {card.num}
-              </p>
+        {/* Cards row — fixed-width cards, items-center */}
+        <div className="flex gap-[24px] items-center w-full">
 
-              {/* Title + body — bottom */}
-              <div className="flex flex-col gap-[24px]">
-                <p
-                  style={{
-                    fontSize: 36,
-                    fontWeight: 400,
-                    lineHeight: 1.15,
-                    letterSpacing: '-0.36px',
-                    color: '#ffffff',
-                  }}
-                >
-                  {card.title}
-                </p>
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 400,
-                    lineHeight: 1.4,
-                    color: '#dbe5fc',
-                  }}
-                >
-                  {card.body}
-                </p>
-              </div>
+          {/* Card 1 — flex-col justify-between: {num+title} top, body bottom */}
+          <div className="flex flex-col justify-between" style={cardBase}>
+            <div className="flex flex-col gap-[32px] items-end w-full">
+              <p style={numStyle}>{CARDS[0].num}</p>
+              <p style={titleStyle}>{CARDS[0].title}</p>
             </div>
-          ))}
+            <p style={bodyStyle}>{CARDS[0].body}</p>
+          </div>
+
+          {/* Card 2 — items-center: all content vertically centred, w-[315px] inner */}
+          <div className="flex items-center" style={cardBase}>
+            <div className="flex flex-col gap-[45px]" style={{ width: 315 }}>
+              <div className="flex flex-col gap-[32px] items-end w-full">
+                <p style={numStyle}>{CARDS[1].num}</p>
+                <p style={titleStyle}>{CARDS[1].title}</p>
+              </div>
+              <p style={bodyStyle}>{CARDS[1].body}</p>
+            </div>
+          </div>
+
+          {/* Card 3 — flex-col justify-between: {num+title} top, body bottom */}
+          <div className="flex flex-col justify-between" style={cardBase}>
+            <div className="flex flex-col gap-[32px] items-start w-full">
+              <p style={numStyle}>{CARDS[2].num}</p>
+              <p style={titleStyle}>{CARDS[2].title}</p>
+            </div>
+            <p style={bodyStyle}>{CARDS[2].body}</p>
+          </div>
+
         </div>
       </div>
     </div>

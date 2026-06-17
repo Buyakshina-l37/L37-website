@@ -19,22 +19,25 @@ export default function TechStack() {
 
             {/* Label */}
             <span className="font-denim font-medium text-[11px] uppercase tracking-[3px] leading-[1.4]" style={{ color: '#4C9CFF' }}>
-              Powered by NVIDIA Omniverse
+              Engineered for Healthcare
             </span>
 
-            {/* Title with partial gradient */}
-            <h2 className="font-denim font-normal text-[48px] leading-[1.15]">
-              <span className="text-light-base">The world&#39;s most advanced </span>
-              <span className="text-gradient-highlight">simulation platform</span>
-              <span className="text-light-base"> — at the core of every L37 deployment</span>
-            </h2>
+            {/* Title — gradient line + sub-line */}
+            <div className="flex flex-col gap-0">
+              <h2 className="font-denim font-normal text-[48px] leading-[1.15] text-gradient-highlight">
+                The Intelligence Layer
+              </h2>
+              <p className="font-denim font-normal text-[48px] leading-[1.15] text-light-base">
+                at the core of every L37 deployment
+              </p>
+            </div>
 
             {/* Body */}
             <p className="font-denim font-normal text-[18px] leading-[1.4] text-light-strong">
-              L37 is built entirely on NVIDIA&#39;s enterprise technology stack. From robot simulation
-              in Omniverse to edge AI inference on Thor and Jetson, every product we ship runs on
-              the same industrial-grade infrastructure that powers the world&#39;s most demanding
-              Physical AI environments.
+              Every L37 deployment is built on a shared knowledge graph and clinical-operational
+              ontology — connecting real-world data, digital twins and robot actions. Proven NVIDIA
+              infrastructure provides the simulation and edge compute beneath it, certified for
+              demanding clinical environments.
             </p>
 
             {/* CTA button */}

@@ -244,27 +244,29 @@ export default function TechStackMobile() {
         <span style={{ fontFamily: '"Denim TRIAL"', fontWeight: 500, fontSize: '11px',
           letterSpacing: '1.65px', textTransform: 'uppercase', color: '#4C9CFF',
           lineHeight: 1.4 }}>
-          Powered by NVIDIA Omniverse
+          Engineered for Healthcare
         </span>
 
-        <h2 style={{ fontFamily: '"Denim TRIAL"', fontWeight: 400, fontSize: '36px',
-          lineHeight: 1.15, letterSpacing: '-0.36px', textAlign: 'center',
-          color: '#F5F7FC', margin: 0 }}>
-          {'The world\'s most advanced '}
-          <span style={{ background: 'linear-gradient(89.8deg, rgb(161,255,182) 0%, rgb(44,138,255) 98%)',
+        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+          <h2 style={{ fontFamily: '"Denim TRIAL"', fontWeight: 400, fontSize: '36px',
+            lineHeight: 1.15, letterSpacing: '-0.36px', margin: 0,
+            background: 'linear-gradient(90deg, #1964df 23.97%, #1eb995 78.84%)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             backgroundClip: 'text' }}>
-            simulation platform
-          </span>
-          {' — at the core of every L37 deployment'}
-        </h2>
+            The Intelligence Layer
+          </h2>
+          <p style={{ fontFamily: '"Denim TRIAL"', fontWeight: 400, fontSize: '36px',
+            lineHeight: 1.15, letterSpacing: '-0.36px', color: '#F5F7FC', margin: 0 }}>
+            at the core of every L37 deployment
+          </p>
+        </div>
 
         <p style={{ fontFamily: '"Denim TRIAL"', fontWeight: 400, fontSize: '18px',
           lineHeight: 1.4, textAlign: 'center', color: '#DBE5FC', margin: 0 }}>
-          L37 is built entirely on NVIDIA&#39;s enterprise technology stack. From robot simulation
-          in Omniverse to edge AI inference on Thor and Jetson, every product we ship runs on
-          the same industrial-grade infrastructure that powers the world&#39;s most demanding
-          Physical AI environments.
+          Every L37 deployment is built on a shared knowledge graph and clinical-operational
+          ontology — connecting real-world data, digital twins and robot actions. Proven NVIDIA
+          infrastructure provides the simulation and edge compute beneath it, certified for
+          demanding clinical environments.
         </p>
 
         <Link href="/contact" style={{ display: 'flex', alignItems: 'center',

@@ -25,7 +25,7 @@ const CARDS = [
   },
 ]
 
-const CARD_BG = 'linear-gradient(225.621deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)'
+const CARD_BG = 'linear-gradient(220.866deg, rgba(255,255,255,0.05) 1.6434%, rgba(255,255,255,0.02) 98.44%)'
 
 export default function Strength() {
   return (
@@ -36,7 +36,7 @@ export default function Strength() {
       {/* Inner content — max 1281px centred */}
       <div
         className="flex flex-col items-center gap-[80px] mx-auto"
-        style={{ maxWidth: 1281, paddingTop: 70, paddingBottom: 80 }}
+        style={{ maxWidth: 1281, paddingTop: 80, paddingBottom: 80 }}
       >
         {/* Heading block */}
         <div className="flex flex-col items-center gap-[24px]" style={{ width: 954 }}>
@@ -50,24 +50,18 @@ export default function Strength() {
           </div>
           <p
             className="text-center whitespace-nowrap"
-            style={{
-              fontSize: 48,
-              fontWeight: 400,
-              lineHeight: 1.15,
-              letterSpacing: '-0.48px',
-              color: '#f5f7fc',
-            }}
+            style={{ fontSize: 48, fontWeight: 400, lineHeight: 1.15, letterSpacing: '-0.48px', color: '#f5f7fc' }}
           >
             Why Choose L37?
           </p>
         </div>
 
-        {/* Cards row — items-stretch so all cards match the tallest */}
-        <div className="flex gap-[24px] items-stretch w-full">
+        {/* Cards row */}
+        <div className="flex gap-[24px] items-center w-full">
           {CARDS.map((card) => (
             <div
               key={card.title}
-              className="flex-1 rounded-[16px] overflow-hidden flex flex-col justify-between"
+              className="flex-1 flex flex-col gap-[48px] items-start rounded-[16px]"
               style={{
                 padding: 48,
                 backgroundImage: CARD_BG,
@@ -76,19 +70,17 @@ export default function Strength() {
             >
               {/* Icon box — top */}
               <div
-                className="rounded-[6px] flex items-center justify-center"
-                style={{
-                  width: 60,
-                  height: 60,
-                  background: 'rgba(245,247,252,0.05)',
-                  flexShrink: 0,
-                }}
+                className="rounded-[6px] overflow-hidden flex items-center justify-center flex-shrink-0"
+                style={{ width: 60, height: 60, background: 'rgba(245,247,252,0.05)' }}
               >
                 <Image src={card.icon} alt={card.iconAlt} width={40} height={40} />
               </div>
 
-              {/* Title + body — bottom */}
-              <div className="flex flex-col gap-[24px]">
+              {/* Text block — fixed 190px height, title top / body bottom */}
+              <div
+                className="flex flex-col justify-between w-full"
+                style={{ height: 190 }}
+              >
                 <p
                   style={{
                     fontSize: 36,
@@ -96,20 +88,23 @@ export default function Strength() {
                     lineHeight: 1.15,
                     letterSpacing: '-0.36px',
                     color: '#ffffff',
+                    width: 315,
                   }}
                 >
                   {card.title}
                 </p>
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 400,
-                    lineHeight: 1.4,
-                    color: '#dbe5fc',
-                  }}
-                >
-                  {card.body}
-                </p>
+                <div className="flex flex-col justify-end" style={{ width: 315 }}>
+                  <p
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 400,
+                      lineHeight: 1.4,
+                      color: '#dbe5fc',
+                    }}
+                  >
+                    {card.body}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

@@ -83,10 +83,10 @@ export default function TechStack() {
             Simulation to Deployment
           </span>
 
-          {/* Title — fluid font-size, single line on desktop */}
+          {/* Title — 36px, single line on desktop */}
           <h3
-            className="font-denim font-normal leading-[1.15] tracking-[-0.36px] text-light-base md:whitespace-nowrap"
-            style={{ fontSize: 'clamp(22px, 3vw, 48px)' }}
+            className="font-denim font-normal leading-[1.15] tracking-[-0.36px] text-light-base whitespace-nowrap"
+            style={{ fontSize: 36, width: '100%', maxWidth: 'none' }}
           >
             One Platform, from virtual replica to the clinical floor
           </h3>

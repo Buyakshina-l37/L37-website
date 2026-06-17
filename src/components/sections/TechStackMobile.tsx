@@ -328,7 +328,7 @@ export default function TechStackMobile() {
             margin: 0,
             fontFamily: '"Denim TRIAL", sans-serif',
             fontWeight: 400,
-            fontSize: '32px',
+            fontSize: 'clamp(22px, 6vw, 28px)',
             lineHeight: 1.15,
             letterSpacing: '-0.32px',
             color: '#F5F7FC',

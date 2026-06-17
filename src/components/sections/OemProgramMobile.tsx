@@ -42,6 +42,7 @@ export default function OemProgramMobile() {
           textTransform: 'uppercase',
           color: '#4c9cff',
           lineHeight: 1.4,
+          textAlign: 'center',
         }}
       >
         oem Program
@@ -56,6 +57,7 @@ export default function OemProgramMobile() {
           lineHeight: 1.15,
           letterSpacing: '-0.36px',
           marginBottom: '24px',
+          textAlign: 'center',
         }}
       >
         <span
@@ -83,6 +85,7 @@ export default function OemProgramMobile() {
           fontSize: '17px',
           lineHeight: 1.4,
           color: '#dbe5fc',
+          textAlign: 'center',
         }}
       >
         L37 helps you create, maintain and anticipate the changes Physical AI brings. Partner

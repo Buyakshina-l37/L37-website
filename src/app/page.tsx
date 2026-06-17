@@ -76,17 +76,17 @@ export default function Home() {
           >
             <OemProgram />
           </div>
-          <div className="md:hidden px-[16px]">
+          <div className="md:hidden">
             <OemProgramMobile />
           </div>
         </section>
 
         {/* ── TechStack — flushes with OemProgram above ── */}
-        <section id="technology" style={{ paddingTop: 0, paddingBottom: 0, marginBottom: 160 }}>
+        <section id="technology" className="mb-0 md:mb-[160px]" style={{ paddingTop: 0, paddingBottom: 0 }}>
           <div className="hidden md:block">
             <TechStack />
           </div>
-          <div className="md:hidden px-[16px]" style={{ marginTop: 0 }}>
+          <div className="md:hidden" style={{ marginTop: 0 }}>
             <TechStackMobile />
           </div>
         </section>

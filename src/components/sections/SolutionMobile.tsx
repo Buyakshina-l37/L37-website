@@ -48,7 +48,6 @@ const CARDS = [
 ]
 
 const CARD_BG = 'linear-gradient(132.406deg, #D6E5FF 0%, #E8F5EF 100%)'
-const CARD_WIDTH = 310
 
 function CardCarousel() {
   const [active, setActive] = useState(0)
@@ -75,8 +74,9 @@ function CardCarousel() {
 
   return (
     <div>
+      {/* Slider track — full viewport width, overflow hidden */}
       <div
-        style={{ overflow: 'hidden', width: '100%' }}
+        style={{ overflow: 'hidden', width: '100vw' }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -85,31 +85,31 @@ function CardCarousel() {
           style={{
             display: 'flex',
             transition: 'transform 350ms ease',
-            transform: `translateX(calc(50% - ${CARD_WIDTH / 2}px - ${active * (CARD_WIDTH + 12)}px))`,
-            gap: '12px',
+            transform: `translateX(calc(-${active} * 100vw))`,
+            willChange: 'transform',
           }}
         >
-          {CARDS.map((card, i) => (
+          {CARDS.map((card) => (
             <div
               key={card.num}
               style={{
                 flexShrink: 0,
-                width: `${CARD_WIDTH}px`,
-                height: '380px',
-                borderRadius: '16px',
+                width: '100vw',
+                height: 'auto',
+                minHeight: '340px',
                 backgroundImage: CARD_BG,
-                overflow: 'hidden',
-                position: 'relative',
-                opacity: i === active ? 1 : 0.55,
-                transition: 'opacity 350ms ease',
+                padding: '32px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
               }}
             >
+              {/* Number — top right */}
               <p
                 style={{
-                  position: 'absolute',
-                  top: 32,
-                  right: 32,
                   margin: 0,
+                  alignSelf: 'flex-end',
+                  textAlign: 'right',
                   fontSize: '18px',
                   fontWeight: 500,
                   lineHeight: 1.25,
@@ -120,15 +120,14 @@ function CardCarousel() {
               >
                 {card.num}
               </p>
+
+              {/* Title + body — anchored to bottom */}
               <div
                 style={{
-                  position: 'absolute',
-                  left: 32,
-                  top: 80,
-                  right: 32,
+                  marginTop: 'auto',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '24px',
+                  gap: '16px',
                 }}
               >
                 <p
@@ -136,7 +135,7 @@ function CardCarousel() {
                     margin: 0,
                     fontSize: '28px',
                     fontWeight: 400,
-                    lineHeight: 1.15,
+                    lineHeight: 1.25,
                     letterSpacing: '-0.28px',
                     color: '#0a0f1a',
                     fontFamily: '"Denim TRIAL", sans-serif',
@@ -147,9 +146,9 @@ function CardCarousel() {
                 <p
                   style={{
                     margin: 0,
-                    fontSize: '16px',
+                    fontSize: '18px',
                     fontWeight: 400,
-                    lineHeight: 1.4,
+                    lineHeight: 1.5,
                     color: 'rgba(10,15,26,0.8)',
                     fontFamily: '"Denim TRIAL", sans-serif',
                   }}
@@ -162,7 +161,7 @@ function CardCarousel() {
         </div>
       </div>
 
-      {/* Dots */}
+      {/* Indicator dots */}
       <div
         style={{
           display: 'flex',
@@ -180,12 +179,12 @@ function CardCarousel() {
             style={{
               height: '4px',
               width: i === active ? '24px' : '10px',
-              borderRadius: i === active ? '2px' : '999px',
-              backgroundColor: i === active ? '#2473f2' : 'rgba(36,115,242,0.25)',
+              borderRadius: '999px',
+              backgroundColor: i === active ? '#BDD5FB' : 'rgba(189,213,251,0.35)',
               border: 'none',
               cursor: 'pointer',
               padding: 0,
-              transition: 'width 300ms ease',
+              transition: 'width 300ms ease, background-color 300ms ease',
             }}
           />
         ))}
@@ -203,7 +202,10 @@ export default function SolutionMobile() {
   }, [])
 
   return (
-    <section style={{ padding: '64px 20px', backgroundColor: '#F5F7FC' }}>
+    <section style={{ paddingTop: '64px', paddingBottom: '64px', backgroundColor: '#F5F7FC', overflow: 'hidden' }}>
+
+      {/* Header block — padded */}
+      <div style={{ padding: '0 20px' }}>
 
       {/* Label */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
@@ -315,7 +317,9 @@ export default function SolutionMobile() {
         </p>
       </div>
 
-      {/* Card carousel */}
+      </div>{/* end header block */}
+
+      {/* Card carousel — full bleed, no side padding */}
       <CardCarousel />
 
     </section>

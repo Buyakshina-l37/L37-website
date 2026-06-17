@@ -8,7 +8,7 @@ const CARDS = [
   {
     num: '/01',
     title: 'Agentic AI for Healthcare',
-    body: 'Operational twins of hospital assets, robots and care pathways — one continuous model linking physical operations to clinical outcomes.',
+    body: 'Deep Real-World Data and agentic expertise, combined into bespoke solutions — autonomous workflows that turn each client\'s clinical evidence into action.',
   },
   {
     num: '/02',
@@ -47,7 +47,13 @@ const CARDS = [
   },
 ]
 
-const CARD_BG = 'linear-gradient(132.406deg, #D6E5FF 0%, #E8F5EF 100%)'
+// Figma specs: card 330×391px, gap 16px, gradient 130.164deg
+// Centered at 390px viewport: (390-330)/2 = 30px initial offset
+// Each step: 330+16 = 346px
+const CARD_WIDTH = 330
+const CARD_GAP = 16
+const CARD_HEIGHT = 391
+const CARD_BG = 'linear-gradient(130.164deg, rgb(214,229,255) 0%, rgb(232,245,239) 100%)'
 
 function CardCarousel() {
   const [active, setActive] = useState(0)
@@ -72,11 +78,14 @@ function CardCarousel() {
     else if (delta < -50 && active > 0) setActive(i => i - 1)
   }
 
+  // Center active card: 30px left margin + shift by (card + gap) per step
+  const translateX = `calc(30px - ${active} * ${CARD_WIDTH + CARD_GAP}px)`
+
   return (
     <div>
-      {/* Slider track — full viewport width, overflow hidden */}
+      {/* Slider track — overflow hidden, full section width */}
       <div
-        style={{ overflow: 'hidden', width: '100vw' }}
+        style={{ overflow: 'hidden', width: '100%' }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -84,50 +93,56 @@ function CardCarousel() {
         <div
           style={{
             display: 'flex',
+            gap: `${CARD_GAP}px`,
             transition: 'transform 350ms ease',
-            transform: `translateX(calc(-${active} * 100vw))`,
+            transform: `translateX(${translateX})`,
             willChange: 'transform',
           }}
         >
           {CARDS.map((card) => (
+            // Figma: w=330 h=391 rounded-16 overflow-clip
             <div
               key={card.num}
               style={{
                 flexShrink: 0,
-                width: '100vw',
-                height: 'auto',
-                minHeight: '340px',
+                width: `${CARD_WIDTH}px`,
+                height: `${CARD_HEIGHT}px`,
+                borderRadius: '16px',
                 backgroundImage: CARD_BG,
-                padding: '32px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
+                overflow: 'hidden',
+                position: 'relative',
               }}
             >
-              {/* Number — top right */}
+              {/* Number — absolute top:32 right:32, 24px medium, opacity 0.3 */}
               <p
                 style={{
+                  position: 'absolute',
+                  top: 32,
+                  right: 32,
                   margin: 0,
-                  alignSelf: 'flex-end',
-                  textAlign: 'right',
-                  fontSize: '18px',
+                  fontSize: '24px',
                   fontWeight: 500,
                   lineHeight: 1.25,
-                  letterSpacing: '-0.18px',
-                  color: 'rgba(10,15,26,0.3)',
+                  letterSpacing: '-0.24px',
+                  color: '#0a0f1a',
+                  opacity: 0.3,
                   fontFamily: '"Denim TRIAL", sans-serif',
                 }}
               >
                 {card.num}
               </p>
 
-              {/* Title + body — anchored to bottom */}
+              {/* Content — absolute left:32 top:115 width:266 height:244, flex col space-between */}
               <div
                 style={{
-                  marginTop: 'auto',
+                  position: 'absolute',
+                  left: 32,
+                  top: 115,
+                  width: 266,
+                  height: 244,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '16px',
+                  justifyContent: 'space-between',
                 }}
               >
                 <p
@@ -148,8 +163,9 @@ function CardCarousel() {
                     margin: 0,
                     fontSize: '18px',
                     fontWeight: 400,
-                    lineHeight: 1.5,
-                    color: 'rgba(10,15,26,0.8)',
+                    lineHeight: 1.4,
+                    letterSpacing: '0.36px',
+                    color: 'rgba(10,15,26,0.9)',
                     fontFamily: '"Denim TRIAL", sans-serif',
                   }}
                 >
@@ -161,13 +177,13 @@ function CardCarousel() {
         </div>
       </div>
 
-      {/* Indicator dots */}
+      {/* Indicators — Figma: gap 6px, active #DBE5FC 24×4px r-2, inactive rgba(219,229,252,0.25) 10×4px r-999 */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '8px',
+          gap: '6px',
           marginTop: '20px',
         }}
       >
@@ -179,8 +195,8 @@ function CardCarousel() {
             style={{
               height: '4px',
               width: i === active ? '24px' : '10px',
-              borderRadius: '999px',
-              backgroundColor: i === active ? '#BDD5FB' : 'rgba(189,213,251,0.35)',
+              borderRadius: i === active ? '2px' : '999px',
+              backgroundColor: i === active ? '#DBE5FC' : 'rgba(219,229,252,0.25)',
               border: 'none',
               cursor: 'pointer',
               padding: 0,

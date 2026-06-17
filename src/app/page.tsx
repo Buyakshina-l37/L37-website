@@ -129,7 +129,7 @@ export default function Home() {
           >
             <Workflow />
           </div>
-          <div className="md:hidden px-[16px]">
+          <div className="md:hidden">
             <WorkflowMobile />
           </div>
         </section>
@@ -142,7 +142,7 @@ export default function Home() {
           >
             <Strength />
           </div>
-          <div className="md:hidden px-[16px]" style={{ marginBottom: '64px' }}>
+          <div className="md:hidden" style={{ marginBottom: '64px' }}>
             <StrengthMobile />
           </div>
         </section>

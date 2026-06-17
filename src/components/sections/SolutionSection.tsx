@@ -9,7 +9,7 @@ const CARDS = [
   {
     num: '/01',
     title: 'Agentic AI for Healthcare',
-    body: 'Operational twins of hospital assets, robots and care pathways — one continuous model linking physical operations to clinical outcomes.',
+    body: "Deep Real-World Data and agentic expertise, combined into bespoke solutions — autonomous workflows that turn each client's clinical evidence into action.",
   },
   {
     num: '/02',

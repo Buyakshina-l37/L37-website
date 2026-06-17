@@ -69,7 +69,7 @@ export default function StrengthMobile() {
       </p>
 
       {/* Cards stacked */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '0 16px' }}>
         {CARDS.map((card) => (
           <div
             key={card.title}

@@ -13,8 +13,8 @@ const STEPS = [
     rest: ' in the virtual replica before it reaches the floor.',
   },
   {
-    bold: 'Then deploy to NVIDIA edge hardware',
-    rest: ', with an ontology and knowledge graph keeping the twin and reality continuously in sync.',
+    bold: 'Then move from validation to the clinical floor,',
+    rest: ' deploying safely into real patient care with twin and reality continuously in sync.',
   },
 ]
 

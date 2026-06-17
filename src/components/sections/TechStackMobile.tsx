@@ -274,7 +274,7 @@ export default function TechStackMobile() {
           borderRadius: '16px', backgroundColor: '#F5F7FC', color: '#0A0F1A',
           fontFamily: '"Denim TRIAL"', fontWeight: 500, fontSize: '16px',
           textDecoration: 'none' }}>
-          Request a technology briefing
+          Request a briefing
         </Link>
       </div>
 

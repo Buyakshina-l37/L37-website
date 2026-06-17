@@ -4,7 +4,7 @@
 import Link from 'next/link'
 
 const BUTTONS = [
-  { label: 'Request a hospital briefing', variant: 'outline' as const },
+  { label: 'Request a briefing', variant: 'outline' as const },
   { label: 'Investor deck request',       variant: 'filled'  as const },
   { label: 'Pharma / data partnerships',  variant: 'outline' as const },
 ]

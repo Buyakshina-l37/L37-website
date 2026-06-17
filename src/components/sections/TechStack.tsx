@@ -46,7 +46,7 @@ export default function TechStack() {
               className="inline-flex items-center justify-center w-fit px-[32px] font-denim font-medium text-[16px] leading-[1.25] text-navy-base bg-light-base rounded-[16px] hover:opacity-90 transition-opacity"
               style={{ height: '56px' }}
             >
-              Request a technology briefing
+              Request a briefing
             </Link>
           </div>
 

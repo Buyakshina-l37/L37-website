@@ -8,23 +8,20 @@ const CARDS = [
   {
     icon: '/icons/icon-team.svg',
     iconAlt: 'Team icon',
-    title: 'Experienced Team & Partner Network',
+    title: 'Why L37',
     body: 'A senior team from healthcare and AI, backed by a global network of technology and robotics partners.',
-    contentBottom: 75,
   },
   {
     icon: '/icons/icon-ai.svg',
     iconAlt: 'AI icon',
-    title: 'Clinical AI & Physical AI Expertise',
+    title: 'Built to Earn Your Trust',
     body: 'Deep, dual expertise across Agentic Clinical AI and Physical AI — unified by a knowledge-graph backbone.',
-    contentBottom: 75,
   },
   {
     icon: '/icons/icon-hospital.svg',
     iconAlt: 'Hospital icon',
-    title: 'We Listen to Our Clients',
+    title: 'What Sets L37 Apart',
     body: 'Solutions shaped around your workflows and priorities, not off-the-shelf products forced onto your teams.',
-    contentBottom: 47,
   },
 ]
 
@@ -65,43 +62,33 @@ export default function Strength() {
           </p>
         </div>
 
-        {/* Cards row */}
-        <div className="flex gap-[24px] items-center w-full">
+        {/* Cards row — items-stretch so all cards match the tallest */}
+        <div className="flex gap-[24px] items-stretch w-full">
           {CARDS.map((card) => (
             <div
               key={card.title}
-              className="relative flex-shrink-0 rounded-[16px] overflow-hidden"
+              className="flex-1 rounded-[16px] overflow-hidden flex flex-col justify-between"
               style={{
-                width: 411,
-                height: 420,
+                padding: 48,
                 backgroundImage: CARD_BG,
                 border: '1px solid rgba(255,255,255,0.12)',
               }}
             >
-              {/* Icon box */}
+              {/* Icon box — top */}
               <div
-                className="absolute rounded-[6px] overflow-hidden flex items-center justify-center"
+                className="rounded-[6px] flex items-center justify-center"
                 style={{
-                  top: 47,
-                  left: 47,
                   width: 60,
                   height: 60,
                   background: 'rgba(245,247,252,0.05)',
+                  flexShrink: 0,
                 }}
               >
-                <Image
-                  src={card.icon}
-                  alt={card.iconAlt}
-                  width={40}
-                  height={40}
-                />
+                <Image src={card.icon} alt={card.iconAlt} width={40} height={40} />
               </div>
 
-              {/* Text content */}
-              <div
-                className="absolute flex flex-col gap-[24px]"
-                style={{ bottom: card.contentBottom, left: 47, width: 315 }}
-              >
+              {/* Title + body — bottom */}
+              <div className="flex flex-col gap-[24px]">
                 <p
                   style={{
                     fontSize: 36,

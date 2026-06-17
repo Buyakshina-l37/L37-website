@@ -10,17 +10,17 @@ const BG = `
 const CARDS = [
   {
     num: '/01',
-    title: 'Contact Us',
+    title: 'A Simple Path to Deployment',
     body: 'Start a conversation. Tell us where you are on your Clinical or Physical AI journey — no commitment required.',
   },
   {
     num: '/02',
-    title: 'Specify Your Needs',
+    title: 'From First Conversation to Full Scale',
     body: 'We scope your clinical and operational challenges together and define a tailored solution with clear outcomes.',
   },
   {
     num: '/03',
-    title: 'Engage',
+    title: 'How We Engage',
     body: 'We deploy, integrate, and partner with your teams — from pilot to scale, with compliance built in.',
   },
 ]
@@ -75,9 +75,8 @@ export default function WorkflowMobile() {
             key={card.num}
             style={{
               width: '100%',
-              height: '328px',
               borderRadius: '16px',
-              padding: '32px',
+              padding: '48px',
               backgroundImage: 'linear-gradient(220.898deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',

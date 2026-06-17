@@ -8,19 +8,19 @@ const CARDS = [
   {
     icon: '/icons/icon-team.svg',
     iconAlt: 'Team icon',
-    title: 'Experienced Team & Partner Network',
+    title: 'Why L37',
     body: 'A senior team from healthcare and AI, backed by a global network of technology and robotics partners.',
   },
   {
     icon: '/icons/icon-ai.svg',
     iconAlt: 'AI icon',
-    title: 'Clinical AI & Physical AI Expertise',
+    title: 'Built to Earn Your Trust',
     body: 'Deep, dual expertise across Agentic Clinical AI and Physical AI — unified by a knowledge-graph backbone.',
   },
   {
     icon: '/icons/icon-hospital.svg',
     iconAlt: 'Hospital icon',
-    title: 'We Listen to Our Clients',
+    title: 'What Sets L37 Apart',
     body: 'Solutions shaped around your workflows and priorities, not off-the-shelf products forced onto your teams.',
   },
 ]
@@ -75,9 +75,8 @@ export default function StrengthMobile() {
             key={card.title}
             style={{
               width: '100%',
-              height: '440px',
               borderRadius: '16px',
-              padding: '32px',
+              padding: '48px',
               backgroundImage: 'linear-gradient(225.621deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',

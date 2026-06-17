@@ -10,17 +10,17 @@ const BG = `
 const CARDS = [
   {
     num: '/01',
-    title: 'Contact Us',
+    title: 'A Simple Path to Deployment',
     body: 'Start a conversation. Tell us where you are on your Clinical or Physical AI journey — no commitment required.',
   },
   {
     num: '/02',
-    title: 'Specify Your Needs',
+    title: 'From First Conversation to Full Scale',
     body: 'We scope your clinical and operational challenges together and define a tailored solution with clear outcomes.',
   },
   {
     num: '/03',
-    title: 'Engage',
+    title: 'How We Engage',
     body: 'We deploy, integrate, and partner with your teams — from pilot to scale, with compliance built in.',
   },
 ]
@@ -62,26 +62,22 @@ export default function Workflow() {
           </p>
         </div>
 
-        {/* Cards row */}
-        <div className="flex gap-[24px] items-center w-full">
+        {/* Cards row — items-stretch so all cards match the tallest */}
+        <div className="flex gap-[24px] items-stretch w-full">
           {CARDS.map((card) => (
             <div
               key={card.num}
-              className="relative flex-shrink-0 rounded-[16px] overflow-hidden"
+              className="flex-1 rounded-[16px] overflow-hidden flex flex-col justify-between"
               style={{
-                width: 411,
-                height: 356,
+                padding: 48,
                 backgroundImage: CARD_BG,
                 border: '1px solid rgba(255,255,255,0.12)',
               }}
             >
               {/* Number — top right */}
               <p
-                className="absolute text-right whitespace-nowrap"
+                className="text-right whitespace-nowrap"
                 style={{
-                  top: 47,
-                  left: 362,
-                  transform: 'translateX(-100%)',
                   fontSize: 24,
                   fontWeight: 500,
                   lineHeight: 1.25,
@@ -92,11 +88,8 @@ export default function Workflow() {
                 {card.num}
               </p>
 
-              {/* Content */}
-              <div
-                className="absolute flex flex-col gap-[40px]"
-                style={{ left: 47, top: 114, width: 315 }}
-              >
+              {/* Title + body — bottom */}
+              <div className="flex flex-col gap-[24px]">
                 <p
                   style={{
                     fontSize: 36,

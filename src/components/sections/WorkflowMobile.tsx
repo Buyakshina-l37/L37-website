@@ -77,7 +77,7 @@ export default function WorkflowMobile() {
               width: '100%',
               height: '328px',
               borderRadius: '16px',
-              padding: '24px',
+              padding: '32px',
               backgroundImage: 'linear-gradient(220.898deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',
@@ -92,9 +92,9 @@ export default function WorkflowMobile() {
                 alignSelf: 'flex-start',
                 fontFamily: '"Denim TRIAL", sans-serif',
                 fontWeight: 500,
-                fontSize: '18px',
+                fontSize: '24px',
                 lineHeight: 1.25,
-                letterSpacing: '-0.18px',
+                letterSpacing: '-0.24px',
                 color: '#2473f2',
               }}
             >
@@ -109,7 +109,7 @@ export default function WorkflowMobile() {
                   fontFamily: '"Denim TRIAL", sans-serif',
                   fontWeight: 400,
                   fontSize: '28px',
-                  lineHeight: 1.15,
+                  lineHeight: 1.25,
                   letterSpacing: '-0.28px',
                   color: '#ffffff',
                 }}
@@ -121,8 +121,8 @@ export default function WorkflowMobile() {
                   margin: 0,
                   fontFamily: '"Denim TRIAL", sans-serif',
                   fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: 1.4,
+                  fontSize: '18px',
+                  lineHeight: 1.5,
                   color: '#dbe5fc',
                 }}
               >

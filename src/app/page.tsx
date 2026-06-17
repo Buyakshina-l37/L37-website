@@ -101,7 +101,7 @@ export default function Home() {
               <Pediatric />
             </div>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden" style={{ marginTop: 80 }}>
             <PediatricMobile />
           </div>
         </section>

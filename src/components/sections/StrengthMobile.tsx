@@ -77,7 +77,7 @@ export default function StrengthMobile() {
               width: '100%',
               height: '440px',
               borderRadius: '16px',
-              padding: '24px',
+              padding: '32px',
               backgroundImage: 'linear-gradient(225.621deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',
@@ -108,9 +108,9 @@ export default function StrengthMobile() {
                   margin: '0 0 16px',
                   fontFamily: '"Denim TRIAL", sans-serif',
                   fontWeight: 400,
-                  fontSize: '26px',
-                  lineHeight: 1.15,
-                  letterSpacing: '-0.26px',
+                  fontSize: '28px',
+                  lineHeight: 1.25,
+                  letterSpacing: '-0.28px',
                   color: '#ffffff',
                 }}
               >
@@ -121,8 +121,8 @@ export default function StrengthMobile() {
                   margin: 0,
                   fontFamily: '"Denim TRIAL", sans-serif',
                   fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: 1.4,
+                  fontSize: '18px',
+                  lineHeight: 1.5,
                   color: '#dbe5fc',
                 }}
               >

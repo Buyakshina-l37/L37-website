@@ -4,15 +4,15 @@
 const CARDS = [
   {
     title: 'Certified SimReady Assets',
-    body: 'We convert your CAD files into certified, physics-accurate SimReady OpenUSD assets — ready for NVIDIA Isaac Sim and any Physical AI environment.',
+    body: 'We convert your CAD files into certified, physics-accurate SimReady OpenUSD assets — ready to drop into any simulation or Physical AI environment.',
   },
   {
     title: 'OEM Exclusivity, Verified',
-    body: 'List with OEM-signed exclusivity and a "Verified by MedAsset" badge — your equipment becomes the model every robotics team builds against.',
+    body: 'List your equipment with a "Verified by MedAsset" badge and optional category exclusivity — so robotics teams and integrators build their simulations around your real hardware, not generic stand-ins.',
   },
   {
     title: 'Reach Every Robot Stack',
-    body: 'OpenUSD interoperability and FHIR/DICOM-aware metadata put your products in front of robotics teams, digital-twin builders and integrators worldwide.',
+    body: 'Built on open standards, your assets reach robotics teams, digital-twin builders and integrators worldwide — ready to plug into any stack.',
   },
 ]
 
@@ -69,7 +69,7 @@ export default function OemProgramMobile() {
             display: 'block',
           }}
         >
-          Healthcare OEMs:
+          Program for Healthcare Equipment Makers:
         </span>
         <span style={{ color: '#f5f7fc', display: 'block' }}>
           Lead the Shift to Physical AI
@@ -88,8 +88,9 @@ export default function OemProgramMobile() {
           textAlign: 'center',
         }}
       >
-        L37 helps you create, maintain and anticipate the changes Physical AI brings. Partner
-        early to build a unique, market-leading SimReady OEM catalogue for the world of Physical AI.
+        L37 turns your medical equipment into certified, simulation-ready Physical AI assets —
+        and gets them adopted. Partner early to build a verified SimReady catalogue before
+        your category fills up.
       </p>
 
       {/* Cards stacked */}

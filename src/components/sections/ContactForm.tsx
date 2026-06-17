@@ -136,17 +136,17 @@ export default function ContactForm() {
   }
 
   const inputClass = (error?: string) =>
-    `w-full px-[16px] py-[12px] font-denim font-normal text-[16px] leading-[1.4] text-navy-base bg-white border rounded-[16px] outline-none transition-colors placeholder:text-[rgba(10,15,26,0.4)] focus:border-primary-base ${
+    `w-full px-[24px] py-[18px] md:px-[16px] md:py-[16px] font-denim font-normal text-[16px] leading-[1.4] text-navy-base bg-white border rounded-[16px] outline-none transition-colors placeholder:text-[rgba(10,15,26,0.4)] focus:border-primary-base ${
       error ? 'border-status-error' : 'border-[rgba(10,15,26,0.2)]'
     }`
 
   return (
     <div
-      className="md:bg-white md:rounded-[16px] px-[20px] py-0 md:p-[40px] flex flex-col gap-[24px] md:shadow-[0px_20px_48px_-8px_rgba(0,11,223,0.06)]"
+      className="md:bg-white md:rounded-[16px] px-0 py-0 md:p-[40px] flex flex-col gap-[32px] md:gap-[24px] md:shadow-[0px_20px_48px_-8px_rgba(0,11,223,0.06)]"
     >
 
-      {/* First + Last name */}
-      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[32px]">
+      {/* First + Last name — stacked on mobile, side-by-side on desktop */}
+      <div className="flex flex-col md:flex-row gap-[32px] md:gap-[32px]">
         <div className="flex flex-col gap-[8px] flex-1">
           <label className="font-denim font-medium text-[12px] uppercase tracking-[0.36px] text-[rgba(10,15,26,0.8)]">
             First Name
@@ -273,7 +273,7 @@ export default function ContactForm() {
             maxLength={1000}
             value={formData.message}
             onChange={e => setFormData({ ...formData, message: e.target.value })}
-            className={`${inputClass(errors.message)} resize-none`}
+            className={`${inputClass(errors.message)} resize-none min-h-[144px] md:min-h-0`}
           />
           <span className="absolute bottom-[12px] right-[16px] font-denim text-[12px] text-[rgba(10,15,26,0.4)]">
             {formData.message.length}/1000 Characters

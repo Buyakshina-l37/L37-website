@@ -1,10 +1,15 @@
+import Image from 'next/image'
+
 export default function Pediatric() {
   return (
     <div className="flex gap-[130px] items-center w-full">
-      {/* Left: image placeholder */}
-      <div
-        className="flex-shrink-0 rounded-[16px]"
-        style={{ width: 610, height: 453, background: '#e9ebf1' }}
+      {/* Left: image */}
+      <Image
+        src="/images/sar-robot.png"
+        alt="SAR robot in pediatric care"
+        width={610}
+        height={453}
+        className="flex-shrink-0 rounded-[16px] object-cover"
       />
 
       {/* Right: text column */}

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const navLinks = [
   // { label: 'Services',    href: '#' }, // hidden for now
-  { label: 'Company',     href: '#' },
+  // { label: 'Company',     href: '#' }, // hidden for now
   { label: 'Team',        href: '/team' },
   { label: 'Contact Us',  href: '/contact' },
 ]

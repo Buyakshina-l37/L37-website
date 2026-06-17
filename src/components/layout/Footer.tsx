@@ -1,7 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const navLinks = [/* 'Services', // hidden for now */ 'Company', 'Team', /* 'Careers', 'Blog', */ 'Contact Us']
+const navLinks = [
+  /* { label: 'Services', href: '#' }, // hidden for now */
+  // { label: 'Company', href: '#' }, // hidden for now
+  { label: 'Team', href: '/team' },
+  /* { label: 'Careers', href: '#' }, { label: 'Blog', href: '#' }, // hidden for now */
+  { label: 'Contact Us', href: '/contact' },
+]
 
 const socialLinks = [
   { href: 'https://linkedin.com/company/l37-co/', icon: '/images/Button-social-media-in.svg', label: 'LinkedIn' },
@@ -11,7 +17,7 @@ const socialLinks = [
 ]
 
 const navLinksMobile = [
-  { label: 'Company', href: '#' },
+  // { label: 'Company', href: '#' }, // hidden for now
   { label: 'Team', href: '/team' },
   { label: 'Contact Us', href: '/contact' },
 ]
@@ -35,13 +41,13 @@ export default function Footer() {
             priority
           />
           <div className="flex items-center" style={{ gap: '48px' }}>
-            {navLinks.map(item => (
+            {navLinks.map(({ label, href }) => (
               <Link
-                key={item}
-                href="#"
+                key={label}
+                href={href}
                 className="font-denim font-normal text-[16px] leading-[1.4] text-light-base hover:text-[rgba(245,247,252,0.7)] transition-colors whitespace-nowrap"
               >
-                {item}
+                {label}
               </Link>
             ))}
           </div>

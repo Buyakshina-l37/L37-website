@@ -61,10 +61,10 @@ export default function OemProgram() {
           {/* (Figma uses items-start not items-center — titles and desc top-align) */}
           <div className="flex items-start justify-between w-full">
 
-            {/* Title block — Figma: flex-col w-[562px] text-[48px] whitespace-nowrap */}
+            {/* Title block — max-width constrains text to 3 lines at all desktop sizes */}
             <div
-              className="flex flex-col flex-shrink-0 whitespace-nowrap"
-              style={{ width: 562, fontSize: 48, lineHeight: 1.15, letterSpacing: '-0.48px' }}
+              className="flex flex-col flex-shrink-0"
+              style={{ maxWidth: 580, fontSize: 48, lineHeight: 1.15, letterSpacing: '-0.48px' }}
             >
               {/* "Healthcare OEMs:" — Figma: gradient/gradient/dark/text-highlight via image */}
               {/* Approximated with CSS gradient to avoid localhost image dependency */}

@@ -38,10 +38,10 @@ export default function PediatricMobile() {
             backgroundClip: 'text',
           }}
         >
-          Starting in Pediatric Units,
+          L37 Integrates and Orchestrates
         </span>
         <span style={{ color: 'rgba(10,15,26,0.9)' }}>
-          L37 Builds a Unique Range of Digital and Physical Robots
+          a Range of Clinical Robots
         </span>
       </div>
 
@@ -56,14 +56,12 @@ export default function PediatricMobile() {
         }}
       >
         <p style={{ margin: '0 0 16px' }}>
-          L37 integrates and orchestrates a unique range of healthcare robots — social, nurse,
-          rehabilitation, MD-assisting and other logistics solutions — starting in pediatric units
-          and divisions.
+          L37 integrates and orchestrates a range of healthcare robots, both physical and digital,
+          starting in pediatric units and divisions.
         </p>
         <p style={{ margin: 0 }}>
-          Each is driven by agentic AI and a shared clinical ontology, and validated in a digital
-          twin before it reaches the ward. Robots are then deployed safely on clinical-grade edge
-          hardware.
+          Physical robots cover social, nursing, rehabilitation and logistics. Digital robots are
+          agentic AI agents that reason and act alongside them.
         </p>
       </div>
 

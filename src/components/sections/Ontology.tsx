@@ -1,20 +1,20 @@
 const ROWS = [
   {
     label: 'Unified Platform',
-    body: 'L37 unifies Clinical AI and Physical AI on one agentic platform.',
+    body: 'Clinical AI and Physical AI run on one agentic platform, not two systems bolted together.',
     first: true,
   },
   {
     label: 'Connected Intelligence',
-    body: 'A shared knowledge graph and clinical-operational ontology connect patient pathways to robot actions.',
+    body: 'A shared knowledge graph and clinical-operational ontology link patient pathways to robot actions.',
   },
   {
     label: 'Seamless Flow',
-    body: 'Data and decisions flow seamlessly between applications, end to end.',
+    body: 'Data and decisions move across applications in real time, from the bedside to the care plan.',
   },
   {
     label: 'Full Care Loop',
-    body: 'Agentic pipelines orchestrate the full care loop — explainable, auditable, and compliant by design.',
+    body: 'Agentic pipelines orchestrate the full care loop: explainable, auditable, and compliant by design.',
     last: true,
   },
 ]

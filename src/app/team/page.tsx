@@ -42,7 +42,7 @@ const TEAM = [
   // Row 2
   {
     name: 'Kabya Basu',
-    role: 'MLOps Senior Engineer',
+    role: 'SimReady Lead Engineer',
     photo: '/images/team/Kabya-Basu.png',
     bio: 'Kabya is an applied AI leader with 15+ years building machine learning systems from research lab to production. His expertise spans LLM fine-tuning, MLOps orchestration, recommendation engines, and edge AI deployment — currently focused on optimizing on-device AI for interactive robotics at L37. He has led AI projects for Walmart, Microsoft, and GoFundMe, and published 26 research papers in computational biology and machine learning. He bridges the gap between cutting-edge AI research and real-world engineering at scale.',
     email: 'kabya.basu@l37.co',
@@ -50,7 +50,7 @@ const TEAM = [
   },
   {
     name: 'Aizhan Kakimzhanova',
-    role: 'Data Engineer',
+    role: 'Senior Data Engineer',
     photo: '/images/team/Aizhan-Kakimzhanova.png',
     bio: 'Aizhan brings over 10 years of expertise in big data engineering across healthcare and financial sectors. She architects HIPAA-compliant cloud data platforms on Azure and Databricks, building scalable pipelines that transform raw clinical data into unified, analytics-ready schemas. Her background spans the full data stack — from ETL/ELT design and warehouse optimization to team leadership. At L37, she drives the infrastructure that makes large-scale healthcare data secure, interoperable, and ML-ready.',
     email: 'aizhan.kakimzhanova@l37.co',
@@ -58,7 +58,7 @@ const TEAM = [
   },
   {
     name: 'Katharine Nowakowski',
-    role: 'Ontology Data Engineer',
+    role: 'Ontology lead Engineer',
     photo: '/images/team/Katharine-Nowakowski.png',
     bio: 'Katharine is a scientist and semantic engineer with a PhD in Biomechanical Engineering and a rare ability to bridge clinical science with knowledge graph architecture. At L37, she leads the integration of genetic, gait, and EHR data into structured ontologies that power AI-driven pharmaceutical and clinical insights. Her work spans graphRAG pipelines, SPARQL/SHACL validation, and deep learning simulations of human movement. She combines academic rigor with hands-on engineering to build the semantic foundations of clinical AI.',
     email: 'katharine.nowakowski@l37.co',
@@ -67,7 +67,7 @@ const TEAM = [
   // Row 3
   {
     name: 'Yingkar Bahetnur',
-    role: 'Data Lead',
+    role: 'Product Strategy & Delivery',
     photo: '/images/team/Yingkar-Bahetnur.png',
     bio: 'Yingkar is a data strategist focused on healthcare data modeling, interoperability, and enterprise architecture. At L37, she defines the data strategy and establishes modeling lifecycles that keep datasets audit-ready and upgrade-safe. Her previous work at Ryte Corp included redesigning a 14-domain healthcare schema to support 100TB+ data and leading Real World Evidence product development with a cross-functional team of 20. With a research background in environmental health and publications in peer-reviewed journals, she brings both analytical depth and strategic clarity to complex data challenges.',
     email: 'yingkar.bahetnur@l37.co',
@@ -75,7 +75,7 @@ const TEAM = [
   },
   {
     name: 'Rita Paseveckaite',
-    role: 'Operations Manager',
+    role: 'Operation Manager',
     photo: '/images/team/Rita-Paseveckaite.png',
     bio: 'Rita is a versatile operations leader with international experience across corporate governance, finance, HR, and legal functions. She has supported C-level executives and Boards of Directors in multi-country environments, managing everything from shareholder communications to cross-functional team coordination. At L37, she ensures that strategic goals translate into disciplined, efficient daily operations. Her background includes diplomatic service at the Lithuanian Consulate and a dual Master\'s in International Finance and International Trade.',
     email: 'rita.paseveckaite@l37.co',

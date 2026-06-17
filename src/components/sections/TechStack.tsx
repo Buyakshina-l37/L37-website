@@ -76,16 +76,19 @@ export default function TechStack() {
 
       {/* ── Zone 2: Lower text block + carousel ── */}
       <div className="max-w-[1608px] mx-auto px-[120px] pt-[80px] pb-[80px]">
-        <div className="flex flex-col items-center gap-[24px] text-center max-w-[760px] mx-auto">
+        <div className="flex flex-col items-center gap-[24px] text-center mx-auto" style={{ maxWidth: 'none' }}>
 
           {/* Label */}
           <span className="font-denim font-medium text-[11px] uppercase tracking-[3px] leading-[1.4]" style={{ color: '#4C9CFF' }}>
-            Full NVIDIA technology stack
+            Simulation to Deployment
           </span>
 
-          {/* Title */}
-          <h3 className="font-denim font-normal text-[36px] leading-[1.15] tracking-[-0.36px] text-light-base">
-            From simulation to deployment — one integrated platform
+          {/* Title — fluid font-size, single line on desktop */}
+          <h3
+            className="font-denim font-normal leading-[1.15] tracking-[-0.36px] text-light-base md:whitespace-nowrap"
+            style={{ fontSize: 'clamp(22px, 3vw, 48px)' }}
+          >
+            One Platform, from virtual replica to the clinical floor
           </h3>
 
           {/* Body */}

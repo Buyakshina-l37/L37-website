@@ -319,7 +319,7 @@ export default function TechStackMobile() {
             color: '#4C9CFF',
           }}
         >
-          Full NVIDIA technology stack
+          Simulation to Deployment
         </span>
 
         {/* Heading */}
@@ -334,7 +334,7 @@ export default function TechStackMobile() {
             color: '#F5F7FC',
           }}
         >
-          From simulation to deployment — one integrated platform
+          One Platform, from virtual replica to the clinical floor
         </h3>
 
         {/* Body */}

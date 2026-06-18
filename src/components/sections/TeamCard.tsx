@@ -22,9 +22,10 @@ interface TeamCardProps {
   bio?: string | null
   email?: string | null
   linkedin?: string | null
+  isRecruitment?: boolean
 }
 
-export default function TeamCard({ name, role, photo, bio, email, linkedin }: TeamCardProps) {
+export default function TeamCard({ name, role, photo, bio, email, linkedin, isRecruitment }: TeamCardProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -50,7 +51,15 @@ export default function TeamCard({ name, role, photo, bio, email, linkedin }: Te
 
           {/* ── Photo area (height 300px = aspect 340:300) ────── */}
           <div className="relative w-full shrink-0" style={{ height: '300px' }}>
-            {photo ? (
+            {isRecruitment ? (
+              <Image
+                src="/images/team/teamPhotoPlaceholder.svg"
+                alt="Open position"
+                fill
+                className="object-cover object-center pointer-events-none"
+                sizes="340px"
+              />
+            ) : photo ? (
               <Image
                 src={photo}
                 alt={name}
@@ -76,21 +85,22 @@ export default function TeamCard({ name, role, photo, bio, email, linkedin }: Te
           {/* flex-1 + justify-center + pb-32 matches Figma "justify-center pb-[32px]" */}
           <div className="flex flex-1 flex-col gap-[24px] items-start justify-center pb-[32px] px-[32px] w-full">
 
-            {/* Name — Denim TRIAL Medium 24px */}
+            {/* Name — Denim TRIAL Medium 24px
+                For recruitment cards: show the role title as the name */}
             <h3
               className="font-denim font-medium text-[24px] leading-[1.25] text-navy-base w-full"
               style={{ letterSpacing: '-0.24px', wordBreak: 'break-word' }}
             >
-              {name}
+              {isRecruitment ? role : name}
             </h3>
 
             {/* Role + Arrow row */}
             <div className="flex items-center justify-between w-full">
               <span
-                className="font-denim font-normal text-[16px] text-navy-70 overflow-hidden text-ellipsis whitespace-nowrap"
+                className={`font-denim font-normal text-[16px] overflow-hidden text-ellipsis whitespace-nowrap ${isRecruitment ? 'text-primary-base' : 'text-navy-70'}`}
                 style={{ letterSpacing: '0.16px', lineHeight: '1.05' }}
               >
-                {role}
+                {isRecruitment ? 'Active recruitment' : role}
               </span>
 
               {/* Right-pointing arrow — color transitions navy → blue on card hover */}
@@ -122,6 +132,7 @@ export default function TeamCard({ name, role, photo, bio, email, linkedin }: Te
           bio={bio}
           email={email}
           linkedin={linkedin}
+          isRecruitment={isRecruitment}
           onClose={() => setIsOpen(false)}
         />,
         document.body

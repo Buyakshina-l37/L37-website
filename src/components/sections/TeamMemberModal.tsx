@@ -23,11 +23,12 @@ export interface TeamMemberModalProps {
   bio?: string | null
   email?: string | null
   linkedin?: string | null
+  isRecruitment?: boolean
   onClose: () => void
 }
 
 export default function TeamMemberModal({
-  name, role, photo, bio, email, linkedin, onClose,
+  name, role, photo, bio, email, linkedin, isRecruitment, onClose,
 }: TeamMemberModalProps) {
 
   // ESC key closes modal
@@ -92,7 +93,16 @@ export default function TeamMemberModal({
               className="relative rounded-[12px] md:rounded-[16px] overflow-hidden
                          w-[60%] md:w-[230px] md:h-[250px]"
             >
-              {photo ? (
+              {isRecruitment ? (
+                <Image
+                  src="/images/team/teamPhotoPlaceholder.svg"
+                  alt="Open position"
+                  width={230}
+                  height={250}
+                  className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full object-cover object-center pointer-events-none"
+                  sizes="(max-width: 768px) 60vw, 230px"
+                />
+              ) : photo ? (
                 <Image
                   src={photo}
                   alt={name}
@@ -124,13 +134,13 @@ export default function TeamMemberModal({
                 className="font-denim font-normal text-[22px] md:text-[32px] leading-[1.2]"
                 style={{ color: '#01012f' }}
               >
-                {name}
+                {isRecruitment ? role : name}
               </h2>
               <p
-                className="font-denim font-normal text-[13px] md:text-[16px] leading-[1.4] text-navy-70"
+                className={`font-denim font-normal text-[13px] md:text-[16px] leading-[1.4] ${isRecruitment ? 'text-navy-70' : 'text-navy-70'}`}
                 style={{ letterSpacing: '0.16px' }}
               >
-                {role}
+                {isRecruitment ? 'Active recruitment' : role}
               </p>
             </div>
 
@@ -143,8 +153,26 @@ export default function TeamMemberModal({
               </p>
             )}
 
-            {/* Contact buttons — centered on mobile, left on desktop */}
-            {(email || linkedin) && (
+            {/* Buttons — Apply Now for recruitment, email+linkedin for regular members */}
+            {isRecruitment ? (
+              <div className="flex items-center justify-center md:justify-start mt-[16px] md:mt-[32px]">
+                <a
+                  href="mailto:hr@l37.co"
+                  className="
+                    inline-flex items-center gap-[8px]
+                    px-[28px] py-[16px] rounded-[100px]
+                    bg-navy-base text-light-base
+                    font-denim font-medium text-[16px] leading-[1.25]
+                    hover:opacity-90 transition-opacity
+                  "
+                >
+                  Apply Now
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path d="M3.75 9H14.25M10.5 4.5L14.25 9L10.5 13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            ) : (email || linkedin) && (
               <div className="flex gap-[16px] md:gap-[24px] items-center justify-center md:justify-start mt-[16px] md:mt-[32px]">
                 {email && (
                   <a

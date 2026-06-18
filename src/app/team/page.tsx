@@ -22,6 +22,7 @@ const TEAM = [
     bio: 'We\'re hiring a Chief Technology Officer to lead the architecture of L37\'s Clinical and Physical AI platform — from the knowledge-graph and ontology core to agentic AI and robotics on NVIDIA edge hardware. You\'ll own the technical vision, build the engineering team, and define how AI operates safely in real clinical environments. Deep experience scaling healthcare-grade AI systems is essential.',
     email: null,
     linkedin: null,
+    isRecruitment: true,
   },
   {
     name: 'Active recruitment',
@@ -30,6 +31,7 @@ const TEAM = [
     bio: 'We\'re hiring a Chief Operating Officer, Americas to build and scale L37\'s operations across the region — delivery, partnerships and commercial execution as we grow. You\'ll turn strategy into disciplined day-to-day operations, stand up the Americas footprint, and help bring Clinical and Physical AI solutions to hospitals and life-sciences partners. Operational leadership in healthcare or enterprise technology is essential.',
     email: null,
     linkedin: null,
+    isRecruitment: true,
   },
   {
     name: 'Bertrand Loubaton',
@@ -193,6 +195,7 @@ export default function TeamPage() {
                   bio={member.bio}
                   email={member.email}
                   linkedin={member.linkedin}
+                  isRecruitment={'isRecruitment' in member ? member.isRecruitment : false}
                 />
               ))}
             </div>

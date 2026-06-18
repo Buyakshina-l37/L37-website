@@ -86,7 +86,7 @@ const TEAM = [
   {
     name: 'Yuliya Buyakshina',
     role: 'Visual Designer',
-    photo: null,
+    photo: '/images/team/Yuliya-Buyakshina.png',
     bio: 'Yuliya shapes how L37 looks and feels, owning the company\'s visual infrastructure — brand guidelines, design tokens, website and marketing assets — so every touchpoint feels cohesive and user-centered. Her work spans UI/UX design for B2B web and mobile applications and analytical reporting tools for healthcare, bringing L37\'s brand to life across product and go-to-market.',
     email: 'yuliya.buyakshina@l37.co',
     linkedin: 'https://www.linkedin.com/in/buyakshina-yuliya-747567214/',

@@ -41,6 +41,7 @@ export default function PhysicalAIDigitalTwinsMobile() {
           fontSize: '36px',
           lineHeight: 1.15,
           letterSpacing: '-0.36px',
+          textAlign: 'center',
         }}
       >
         <span style={{ fontWeight: 400, color: 'rgba(10,15,26,0.9)' }}>

@@ -93,13 +93,15 @@ export default function OntologyMobile() {
         ))}
       </div>
 
-      {/* Image placeholder */}
-      <div
+      {/* Ontology diagram */}
+      <img
+        src="/images/ontology.svg"
+        alt="Ontology diagram"
         style={{
           width: '100%',
           height: '260px',
           borderRadius: '16px',
-          background: 'rgba(10,15,26,0.05)',
+          objectFit: 'cover',
         }}
       />
 

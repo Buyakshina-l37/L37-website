@@ -72,10 +72,12 @@ export default function Ontology() {
         </div>
       </div>
 
-      {/* Right: placeholder */}
-      <div
+      {/* Right: ontology diagram */}
+      <img
+        src="/images/ontology.svg"
+        alt="Ontology diagram"
         className="flex-shrink-0 rounded-[16px]"
-        style={{ width: 610, height: 554, background: 'rgba(10,15,26,0.05)' }}
+        style={{ width: 610, height: 554 }}
       />
     </div>
   )

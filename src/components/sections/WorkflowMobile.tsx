@@ -81,7 +81,7 @@ export default function WorkflowMobile() {
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
+              gap: '32px',
             }}
           >
             {/* Number — anchored to top */}
@@ -100,8 +100,8 @@ export default function WorkflowMobile() {
               {card.num}
             </p>
 
-            {/* Title + body — anchored to bottom */}
-            <div style={{ marginTop: 'auto' }}>
+            {/* Title + body */}
+            <div>
               <p
                 style={{
                   margin: '0 0 12px',

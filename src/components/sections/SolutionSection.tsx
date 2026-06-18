@@ -163,7 +163,7 @@ export default function SolutionSection() {
               >
                 {/* Number — right edge at 363px = 48px from right of 411px card */}
                 <p
-                  className="absolute text-[#0a0f1a] opacity-30 text-right whitespace-nowrap"
+                  className="absolute text-[#141B29] opacity-30 text-right whitespace-nowrap"
                   style={{
                     top: 48,
                     left: 363,
@@ -183,7 +183,7 @@ export default function SolutionSection() {
                   style={{ left: 48, top: 115, width: 315, height: 287 }}
                 >
                   <p
-                    className="text-[#0a0f1a] w-full"
+                    className="text-[#141B29] w-full"
                     style={{ fontSize: 36, fontWeight: 400, lineHeight: 1.15, letterSpacing: '-0.36px' }}
                   >
                     {card.title}
@@ -252,7 +252,7 @@ function NavButton({
         width: 32,
         height: 32,
         borderRadius: '100px',
-        background: '#0a0f1a',
+        background: '#141B29',
         border: 'none',
         cursor: 'pointer',
         display: 'flex',
@@ -265,7 +265,7 @@ function NavButton({
         zIndex: 10,
       }}
       onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#2473f2' }}
-      onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#0a0f1a' }}
+      onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#141B29' }}
     >
       {/* navigate.forward.svg — rotated 180deg for left button */}
       {/* eslint-disable-next-line @next/next/no-img-element */}

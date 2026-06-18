@@ -17,7 +17,7 @@ const H4: React.CSSProperties = {
   fontSize: 24,
   fontWeight: 500,
   lineHeight: 1.3,
-  color: '#0a0f1a',
+  color: '#141B29',
 }
 
 // Bullet component — dot + gap-[12px] + text

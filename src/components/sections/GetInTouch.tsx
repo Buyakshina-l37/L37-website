@@ -78,15 +78,15 @@ export default function GetInTouch() {
               whiteSpace: 'nowrap',
               ...(variant === 'filled'
                 ? {
-                    background: '#0a0f1a',
+                    background: '#141B29',
                     color: '#f5f7fc',
                     boxShadow: '0px 6px 4px 0px rgba(0,0,0,0.03)',
                     border: 'none',
                   }
                 : {
                     background: 'transparent',
-                    color: '#0a0f1a',
-                    border: '1px solid #0a0f1a',
+                    color: '#141B29',
+                    border: '1px solid #141B29',
                   }),
             }}
           >

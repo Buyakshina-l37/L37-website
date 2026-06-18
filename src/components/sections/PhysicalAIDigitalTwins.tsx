@@ -125,7 +125,7 @@ export default function PhysicalAIDigitalTwins() {
                     className="text-[rgba(10,15,26,0.8)]"
                     style={{ fontSize: 20, fontWeight: 400, lineHeight: 1.4 }}
                   >
-                    <strong className="text-[#0a0f1a]" style={{ fontWeight: 500 }}>
+                    <strong className="text-[#141B29]" style={{ fontWeight: 500 }}>
                       {step.bold}
                     </strong>
                     {step.rest}

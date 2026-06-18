@@ -129,7 +129,7 @@ export default function PhysicalAIDigitalTwinsMobile() {
                     color: 'rgba(10,15,26,0.8)',
                   }}
                 >
-                  <strong style={{ fontWeight: 500, color: '#0a0f1a' }}>{step.bold}</strong>
+                  <strong style={{ fontWeight: 500, color: '#141B29' }}>{step.bold}</strong>
                   {step.rest}
                 </p>
               </motion.div>

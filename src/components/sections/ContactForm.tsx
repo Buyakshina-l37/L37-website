@@ -222,7 +222,7 @@ export default function ContactForm() {
               width="16" height="16" viewBox="0 0 16 16" fill="none"
               className={`transition-transform duration-200 shrink-0 ${isOpen ? 'rotate-180' : ''}`}
             >
-              <path d="M4 6L8 10L12 6" stroke="#0A0F1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M4 6L8 10L12 6" stroke="#141B29" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 

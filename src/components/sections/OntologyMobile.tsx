@@ -49,7 +49,7 @@ export default function OntologyMobile() {
         >
           Clinical and Physical AI,
         </span>
-        <span style={{ color: '#0a0f1a' }}>Unified</span>
+        <span style={{ color: '#141B29' }}>Unified</span>
       </div>
 
       {/* Rows */}

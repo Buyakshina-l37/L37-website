@@ -271,7 +271,7 @@ export default function TechStackMobile() {
 
         <Link href="/contact" style={{ display: 'flex', alignItems: 'center',
           justifyContent: 'center', width: '100%', height: '56px',
-          borderRadius: '16px', backgroundColor: '#F5F7FC', color: '#0A0F1A',
+          borderRadius: '16px', backgroundColor: '#F5F7FC', color: '#141B29',
           fontFamily: '"Denim TRIAL"', fontWeight: 500, fontSize: '16px',
           textDecoration: 'none' }}>
           Request a briefing

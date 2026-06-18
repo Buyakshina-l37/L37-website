@@ -19,7 +19,7 @@ const H3: React.CSSProperties = {
   fontWeight: 400,
   lineHeight: 1.15,
   letterSpacing: '-0.36px',
-  color: '#0a0f1a',
+  color: '#141B29',
 }
 
 const H4: React.CSSProperties = {
@@ -27,7 +27,7 @@ const H4: React.CSSProperties = {
   fontWeight: 500,
   lineHeight: 1.25,
   letterSpacing: '-0.24px',
-  color: '#0a0f1a',
+  color: '#141B29',
 }
 
 // Bullet point component — matches Figma's SVG dot + gap-[12px] layout
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
               fontWeight: 500,
               lineHeight: 1.15,
               letterSpacing: '-0.56px',
-              color: '#0a0f1a',
+              color: '#141B29',
               marginBottom: 16,
             }}
           >

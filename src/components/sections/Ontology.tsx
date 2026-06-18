@@ -30,7 +30,7 @@ export default function Ontology() {
           style={{ fontSize: 48, fontWeight: 500, lineHeight: 1.15, letterSpacing: '-0.48px' }}
         >
           <span className="text-gradient-highlight">Clinical and Physical AI,</span>
-          <span className="text-[#0a0f1a]">Unified</span>
+          <span className="text-[#141B29]">Unified</span>
         </h2>
 
         {/* Rows */}

@@ -124,7 +124,7 @@ function CardCarousel() {
                   fontWeight: 500,
                   lineHeight: 1.25,
                   letterSpacing: '-0.24px',
-                  color: '#0a0f1a',
+                  color: '#141B29',
                   opacity: 0.3,
                   fontFamily: '"Denim TRIAL", sans-serif',
                 }}
@@ -152,7 +152,7 @@ function CardCarousel() {
                     fontWeight: 400,
                     lineHeight: 1.25,
                     letterSpacing: '-0.28px',
-                    color: '#0a0f1a',
+                    color: '#141B29',
                     fontFamily: '"Denim TRIAL", sans-serif',
                   }}
                 >

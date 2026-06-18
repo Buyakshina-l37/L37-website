@@ -81,7 +81,7 @@ export default function StrengthMobile() {
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
+              gap: '24px',
             }}
           >
             {/* Icon — anchored to top */}
@@ -100,8 +100,8 @@ export default function StrengthMobile() {
               <Image src={card.icon} alt={card.iconAlt} width={32} height={32} />
             </div>
 
-            {/* Title + body — anchored to bottom */}
-            <div style={{ marginTop: 'auto' }}>
+            {/* Title + body */}
+            <div>
               <p
                 style={{
                   margin: '0 0 16px',

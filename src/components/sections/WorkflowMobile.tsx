@@ -76,7 +76,7 @@ export default function WorkflowMobile() {
             style={{
               width: '100%',
               borderRadius: '16px',
-              padding: '48px',
+              padding: '32px',
               backgroundImage: 'linear-gradient(220.898deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.12)',
               display: 'flex',

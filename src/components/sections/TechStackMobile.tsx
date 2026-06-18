@@ -286,6 +286,9 @@ export default function TechStackMobile() {
           overflow: 'hidden',
           position: 'relative',
           margin: '0 auto',
+          paddingTop: '80px',
+          paddingBottom: '80px',
+          boxSizing: 'content-box',
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}

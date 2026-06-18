@@ -35,14 +35,14 @@ export default function TeamCard({ name, role, photo, bio, email, linkedin, isRe
     <>
       {/* Shadow wrapper — separate from overflow-hidden so shadow isn't clipped on scale */}
       <div
-        className="rounded-[16px] shadow-[0px_40px_48px_-8px_rgba(0,11,223,0.06)]"
+        className="h-full rounded-[16px] shadow-[0px_40px_48px_-8px_rgba(0,11,223,0.06)]"
         onClick={() => setIsOpen(true)}
       >
 
         {/* Card — scale on hover, clips photo corners */}
         <div
           className="
-            group relative flex flex-col gap-[32px] h-[429px] w-full rounded-[16px] overflow-hidden
+            group relative flex flex-col gap-[32px] h-full w-full rounded-[16px] overflow-hidden
             bg-gradient-to-b from-[rgba(255,255,255,0.7)] to-white
             transition-transform duration-300 ease-out cursor-pointer
             hover:scale-[1.02]
@@ -83,7 +83,7 @@ export default function TeamCard({ name, role, photo, bio, email, linkedin, isRe
 
           {/* ── Content: name + role/arrow ─────────────────────── */}
           {/* flex-1 + justify-center + pb-32 matches Figma "justify-center pb-[32px]" */}
-          <div className="flex flex-1 flex-col gap-[24px] items-start justify-center pb-[32px] px-[32px] w-full">
+          <div className="flex flex-1 flex-col gap-[24px] items-start justify-end pb-[32px] px-[32px] w-full">
 
             {/* Name — Denim TRIAL Medium 24px
                 For recruitment cards: show the role title as the name */}

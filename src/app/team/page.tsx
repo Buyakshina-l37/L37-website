@@ -185,7 +185,7 @@ export default function TeamPage() {
             className="mx-auto px-[20px] md:px-[16px]"
             style={{ maxWidth: '1148px' }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[48px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[48px] items-stretch">
               {TEAM.map((member) => (
                 <TeamCard
                   key={`${member.name}-${member.role}`}

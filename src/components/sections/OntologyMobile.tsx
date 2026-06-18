@@ -1,5 +1,5 @@
 // Ontology — mobile layout
-// Heading + 4 rows + image placeholder below
+// Image first (full-bleed, edge-to-edge) → 60px gap → heading + rows
 
 const ROWS = [
   {
@@ -24,7 +24,22 @@ const ROWS = [
 
 export default function OntologyMobile() {
   return (
-    <section style={{ padding: '64px 20px', backgroundColor: '#F5F7FC' }}>
+    <section style={{ paddingTop: '0', paddingBottom: '64px', backgroundColor: '#F5F7FC', overflow: 'hidden' }}>
+
+      {/* Ontology diagram — full-bleed, edge to edge */}
+      <img
+        src="/images/ontology.svg"
+        alt="Ontology diagram"
+        style={{
+          width: '100%',
+          height: 'auto',
+          display: 'block',
+          objectFit: 'contain',
+        }}
+      />
+
+      {/* Text block — 60px gap after image, with horizontal padding */}
+      <div style={{ padding: '60px 20px 0' }}>
 
       {/* Heading */}
       <div
@@ -53,7 +68,7 @@ export default function OntologyMobile() {
       </div>
 
       {/* Rows */}
-      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '40px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         {ROWS.map((row) => (
           <div
             key={row.label}
@@ -93,18 +108,7 @@ export default function OntologyMobile() {
         ))}
       </div>
 
-      {/* Ontology diagram */}
-      <img
-        src="/images/ontology.svg"
-        alt="Ontology diagram"
-        style={{
-          width: '100%',
-          height: '260px',
-          borderRadius: '16px',
-          objectFit: 'cover',
-        }}
-      />
-
+      </div>{/* end text block */}
     </section>
   )
 }

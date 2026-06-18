@@ -137,7 +137,7 @@ export default function TeamMemberModal({
             {/* Bio — 14px at all breakpoints */}
             {bio && (
               <p
-                className="font-denim font-normal text-[14px] leading-[1.5] text-navy-80 mt-[16px] md:mt-[32px]"
+                className="font-denim font-normal text-[16px] md:text-[18px] leading-[1.5] text-navy-80 mt-[16px] md:mt-[32px]"
               >
                 {bio}
               </p>

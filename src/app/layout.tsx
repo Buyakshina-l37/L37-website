@@ -22,12 +22,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   icons: {
     icon: [
-      { url: '/l37-favicon/favicon.ico', type: 'image/x-icon' },
-      { url: '/l37-favicon/favicon.svg', type: 'image/svg+xml' },
-      { url: '/l37-favicon/favicon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/l37-favicon/favicon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/L37-favicon/favicon.ico', type: 'image/x-icon' },
+      { url: '/L37-favicon/favicon.svg', type: 'image/svg+xml' },
+      { url: '/L37-favicon/favicon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/L37-favicon/favicon-512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: { url: '/l37-favicon/apple-touch-icon.png', sizes: '180x180' },
+    apple: { url: '/L37-favicon/apple-touch-icon.png', sizes: '180x180' },
   },
   title: 'L37: Physical AI, Agentic AI & Clinical AI — One Integrated Platform',
   description: 'L37 builds healthcare-native digital twins for hospital robot training, simulation and regulatory validation.',

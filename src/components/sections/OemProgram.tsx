@@ -57,9 +57,8 @@ export default function OemProgram() {
             </p>
           </div>
 
-          {/* Heading row — Figma: flex items-start justify-between w-full */}
-          {/* (Figma uses items-start not items-center — titles and desc top-align) */}
-          <div className="flex items-start justify-between w-full">
+          {/* Heading row — Figma: flex items-center justify-between w-full */}
+          <div className="flex items-center justify-between w-full">
 
             {/* Title block — max-width constrains text to 3 lines at all desktop sizes */}
             <div
@@ -99,27 +98,26 @@ export default function OemProgram() {
         </div>
 
         {/* ── Cards row — centered within the 1281px wrapper ── */}
-        <div className="flex gap-[24px] items-center justify-center">
+        <div className="flex gap-[24px] items-center">
           {CARDS.map((card) => (
-            // Figma: w-[411px] h-[346px] rounded-[16px] overflow-clip
+            // Figma: w-[411px] h-[370px] p-[48px] flex-col justify-between
             // bg: gradient-to-b from-[rgba(36,115,242,0.8)] to-[rgba(36,115,242,0.4)]
             // border: border border-[rgba(255,255,255,0.15)]
             <div
               key={card.title}
-              className="relative flex-shrink-0 rounded-[16px] overflow-hidden"
+              className="flex flex-col justify-between flex-shrink-0 rounded-[16px]"
               style={{
                 width: 411,
-                height: 346,
+                height: 370,
+                padding: 48,
                 backgroundImage: 'linear-gradient(180deg, rgba(36,115,242,0.8) 0%, rgba(36,115,242,0.4) 100%)',
                 border: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              {/* Card title — Figma: absolute top-[47px] left-[47px] w-[315px] text-[36px] */}
+              {/* Card title — Figma: w-[315px] text-[36px] tracking-[-0.36px] leading-[1.15] */}
               <p
-                className="absolute text-[#f5f7fc]"
+                className="text-[#f5f7fc]"
                 style={{
-                  top: 47,
-                  left: 47,
                   width: 315,
                   fontSize: 36,
                   fontWeight: 400,
@@ -130,21 +128,20 @@ export default function OemProgram() {
                 {card.title}
               </p>
 
-              {/* Card body — Figma: absolute bottom-[47px] left-[47px] w-[315px] text-[18px] */}
-              <p
-                className="absolute text-[#f5f7fc]"
-                style={{
-                  bottom: 47,
-                  left: 47,
-                  width: 315,
-                  fontSize: 18,
-                  fontWeight: 400,
-                  lineHeight: 1.4,
-                  letterSpacing: '0.36px',
-                }}
-              >
-                {card.body}
-              </p>
+              {/* Card body — Figma: flex-col justify-end w-[315px] text-[18px] tracking-[0.36px] */}
+              <div className="flex flex-col justify-end" style={{ width: 315 }}>
+                <p
+                  className="text-[#f5f7fc]"
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 400,
+                    lineHeight: 1.4,
+                    letterSpacing: '0.36px',
+                  }}
+                >
+                  {card.body}
+                </p>
+              </div>
             </div>
           ))}
         </div>

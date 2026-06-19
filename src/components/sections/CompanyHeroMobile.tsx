@@ -18,7 +18,7 @@ export default function CompanyHeroMobile() {
         fill
         className="object-cover object-center pointer-events-none"
         priority
-        sizes="390px"
+        sizes="100vw"
       />
 
       {/* Content — top=96, left/right=20 */}

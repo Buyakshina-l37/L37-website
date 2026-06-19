@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 // Hero section — mobile version
@@ -12,13 +11,12 @@ export default function CompanyHeroMobile() {
     <section className="relative overflow-hidden" style={{ height: 540 }}>
 
       {/* Background photo — mobile */}
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src="/images/company-hero-mob.png"
-        alt="L37 Company"
-        width={780}
-        height={1080}
+        alt=""
+        aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
-        priority
       />
 
       {/* Content — top=96, left/right=20 */}

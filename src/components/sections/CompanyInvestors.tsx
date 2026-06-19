@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 // Investors section — photo bg
@@ -13,19 +12,19 @@ export default function CompanyInvestors() {
         style={{ height: 600 }}
       >
         {/* Background image — desktop */}
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/investors.png"
-          alt="Investors"
-          width={1609}
-          height={600}
+          alt=""
+          aria-hidden="true"
           className="hidden md:block absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
         />
         {/* Background image — mobile */}
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/investors-mob.png"
-          alt="Investors"
-          width={780}
-          height={1200}
+          alt=""
+          aria-hidden="true"
           className="md:hidden absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
         />
 

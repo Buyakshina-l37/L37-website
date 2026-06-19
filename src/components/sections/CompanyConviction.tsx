@@ -1,12 +1,12 @@
 // Conviction section — light bg, centered
 // Label: "OUR CONVICTION" (blue, 11px uppercase)
 // Heading: 48px navy
-// Body: 20px navy-80, max-w-[900px]
+// Body: 20px navy-80, max-w-[890px]
 
 export default function CompanyConviction() {
   return (
     <section className="py-[80px] md:py-[140px] px-[20px] md:px-[16px]">
-      <div className="mx-auto max-w-[900px] flex flex-col items-center gap-[32px] text-center">
+      <div className="mx-auto max-w-[890px] flex flex-col items-center gap-[32px] text-center">
 
         {/* Label */}
         <div className="px-[8px] py-[4px] rounded-[3px]">

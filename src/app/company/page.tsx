@@ -33,10 +33,8 @@ export default function CompanyPage() {
         {/* L37 name story */}
         <CompanyL37Name />
 
-        {/* Approach + 3 cards — 140px gap from L37Name */}
-        <div className="mt-[140px]">
-          <CompanyApproach />
-        </div>
+        {/* Approach + 3 cards */}
+        <CompanyApproach />
 
         {/* Focus & Markets (dark) */}
         <CompanyFocusMarkets />

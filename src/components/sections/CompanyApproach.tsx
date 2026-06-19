@@ -26,7 +26,7 @@ const CARDS = [
 
 export default function CompanyApproach() {
   return (
-    <section className="py-[80px] md:py-[140px] px-[20px] md:px-[16px]">
+    <section className="pb-[80px] md:pb-[140px] px-[20px] md:px-[16px]">
       <div className="mx-auto max-w-[1200px] flex flex-col gap-[80px]">
 
         {/* Top row — label+heading LEFT, body RIGHT */}

@@ -29,8 +29,8 @@ export default function CompanyCompliance() {
             </p>
           </div>
           <h2
-            className="font-denim font-medium text-navy-base text-center"
-            style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: '1.15', letterSpacing: '-0.48px' }}
+            className="font-denim font-medium text-navy-base text-center text-[36px] md:text-[clamp(32px,_4vw,_48px)]"
+            style={{ lineHeight: '1.15', letterSpacing: '-0.48px' }}
           >
             Compliance and trust, built in
           </h2>

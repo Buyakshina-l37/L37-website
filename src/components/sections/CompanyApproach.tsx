@@ -40,7 +40,7 @@ export default function CompanyApproach() {
               </p>
             </div>
             <h2
-              className="font-denim font-medium text-navy-base"
+              className="font-denim font-medium text-navy-base text-center md:text-left"
               style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: '1.15', letterSpacing: '-0.48px' }}
             >
               Healthcare first. Physical AI second.

@@ -72,8 +72,8 @@ export default function CompanyGlobal() {
                 }}
               >
                 <h3
-                  className="font-denim font-normal text-white leading-[1.15]"
-                  style={{ fontSize: 36, letterSpacing: '-0.36px' }}
+                  className="font-denim font-normal text-white leading-[1.15] text-[28px] md:text-[36px]"
+                  style={{ letterSpacing: '-0.36px' }}
                 >
                   {item.title}
                 </h3>

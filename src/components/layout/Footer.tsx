@@ -33,13 +33,15 @@ export default function Footer() {
       >
         {/* Верхня частина — лого + навігація */}
         <div className="flex items-center justify-between mb-[80px]">
-          <Image
-            src="/images/logo/l37-logo-white.svg"
-            alt="L37"
-            width={104}
-            height={58}
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo/l37-logo-white.svg"
+              alt="L37"
+              width={104}
+              height={58}
+              priority
+            />
+          </Link>
           <div className="flex items-center" style={{ gap: '48px' }}>
             {navLinks.map(({ label, href }) => (
               <Link
@@ -94,13 +96,15 @@ export default function Footer() {
         style={{ padding: '60px 60px 40px' }}
       >
         {/* Logo */}
-        <Image
-          src="/images/logo/l37-logo-white.svg"
-          alt="L37"
-          width={131}
-          height={73}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo/l37-logo-white.svg"
+            alt="L37"
+            width={131}
+            height={73}
+            priority
+          />
+        </Link>
 
         {/* Nav links — 2 columns */}
         <div

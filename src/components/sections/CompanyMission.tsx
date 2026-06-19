@@ -1,7 +1,24 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 // Mission section — gradient bg, centered large italic quote
 // Background: linear-gradient(162.727deg, #D6E5FF 0%, #E8F5EF 100%)
 // Label: "OUR MISSION" (blue, 11px)
 // Quote: 56px gradient text (blue → teal)
+
+const LINES = [
+  'To evolve healthcare through',
+  'adaptive, intelligent systems that learn and',
+  'improve alongside the people they serve.',
+]
+
+const gradientStyle = {
+  backgroundImage: 'linear-gradient(89deg, #1964df 24%, #1eb995 79%)',
+  WebkitBackgroundClip: 'text' as const,
+  WebkitTextFillColor: 'transparent' as const,
+  backgroundClip: 'text' as const,
+}
 
 export default function CompanyMission() {
   return (
@@ -23,19 +40,27 @@ export default function CompanyMission() {
             </p>
           </div>
 
-          {/* Quote — gradient text */}
+          {/* Quote — gradient text, animated line by line */}
           <p
             className="font-denim font-normal leading-[1.15]"
             style={{
               fontSize: 'clamp(28px, 4.5vw, 56px)',
               letterSpacing: '-0.56px',
-              backgroundImage: 'linear-gradient(89deg, #1964df 24%, #1eb995 79%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
             }}
           >
-            To evolve healthcare through adaptive, intelligent systems that learn and improve alongside the people they serve.
+            {LINES.map((line, i) => (
+              <motion.span
+                key={i}
+                className="block"
+                style={gradientStyle}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: 'easeOut' }}
+              >
+                {line}
+              </motion.span>
+            ))}
           </p>
 
         </div>

@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 // Focus Markets — Figma node 13809:14330
 // Background: radial gradient overlay + #141b29
 // Top row: label+heading LEFT (550px) ↔ body RIGHT (550px), gap=100px, items-end
@@ -86,14 +90,18 @@ export default function CompanyFocusMarkets() {
 
         {/* Market cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
-          {MARKETS.map((market) => (
-            <div
+          {MARKETS.map((market, i) => (
+            <motion.div
               key={market.stage}
               className="flex flex-col gap-[40px] justify-center items-start p-[40px] rounded-[16px]"
               style={{
                 background: 'linear-gradient(205.726deg, rgba(255,255,255,0.05) 1.6%, rgba(255,255,255,0.02) 98.4%)',
                 border: '1px solid rgba(255,255,255,0.12)',
               }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.15, ease: 'easeOut' }}
             >
               {/* Stage dot + label */}
               <div className="flex items-center gap-[16px]">
@@ -116,7 +124,7 @@ export default function CompanyFocusMarkets() {
               >
                 {market.title}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

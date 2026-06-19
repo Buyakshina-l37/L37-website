@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 // Investors section — photo bg
 // Desktop: investors.png, content left=204 vertically centered, button w=294
@@ -7,9 +10,13 @@ import Link from 'next/link'
 export default function CompanyInvestors() {
   return (
     <div className="px-[16px] py-[16px] md:py-[24px]">
-      <section
+      <motion.section
         className="relative overflow-hidden rounded-[24px]"
         style={{ height: 600 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {/* Background image — desktop */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -66,7 +73,7 @@ export default function CompanyInvestors() {
 
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   )
 }

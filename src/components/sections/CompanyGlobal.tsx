@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 // Global section — dark bg (#141b29), rounded-bl rounded-br
 // Left: label + gradient heading + body
 // Right: 4 items with border-bottom dividers
@@ -30,8 +34,8 @@ export default function CompanyGlobal() {
       <div className="mx-auto max-w-[1200px]">
         <div className="flex flex-col md:flex-row gap-[60px] md:gap-[164px] items-start">
 
-          {/* Left col */}
-          <div className="flex flex-col gap-[24px] shrink-0 md:w-[429px]">
+          {/* Left col — sticky on desktop */}
+          <div className="flex flex-col gap-[24px] shrink-0 md:w-[429px] md:sticky md:top-[120px] md:self-start">
             <div className="px-[8px] py-[4px] rounded-[3px]">
               <p className="font-denim font-medium text-[#4c9cff] text-[11px] uppercase tracking-[1.65px] leading-[1.4]">
                 GLOBAL BY DESIGN
@@ -61,15 +65,19 @@ export default function CompanyGlobal() {
             </p>
           </div>
 
-          {/* Right col — list */}
+          {/* Right col — scrollable cards */}
           <div className="flex flex-col flex-1">
             {ITEMS.map((item, i) => (
-              <div
+              <motion.div
                 key={item.title}
                 className="flex flex-col gap-[24px] py-[40px]"
                 style={{
                   borderBottom: i < ITEMS.length - 1 ? '1px solid rgba(245,247,252,0.1)' : 'none',
                 }}
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <h3
                   className="font-denim font-normal text-white leading-[1.15] text-[28px] md:text-[36px]"
@@ -83,7 +91,7 @@ export default function CompanyGlobal() {
                 >
                   {item.body}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
 

@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const CARDS = [
   {
-    icon: '/icons/icon-ai.svg',
+    icon: '/icons/icon-ai-light.svg',
     title: 'Clinical intelligence at the core',
     body: 'Every system is grounded in real clinical knowledge, not generic AI bolted onto hardware.',
   },

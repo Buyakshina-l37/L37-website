@@ -20,12 +20,6 @@ export default function CompanyInvestors() {
           sizes="1609px"
         />
 
-        {/* Dark overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'rgba(0,0,0,0.5)' }}
-        />
-
         {/* Content — vertically centered, left-aligned */}
         <div
           className="absolute inset-0 flex flex-col justify-center"

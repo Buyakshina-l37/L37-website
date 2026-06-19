@@ -68,9 +68,9 @@ export default function CompanyApproach() {
                 minHeight: 394,
               }}
             >
-              {/* Icon — frosted glass container 60×60, icon 40×40 */}
+              {/* Icon — frosted glass container 60×60, icon 40×40, light/base color */}
               <div
-                className="flex items-center justify-center rounded-[6px] shrink-0"
+                className="flex items-center justify-center rounded-[6px] shrink-0 text-light-base"
                 style={{ width: 60, height: 60, background: 'rgba(255,255,255,0.1)' }}
               >
                 <Image
@@ -78,6 +78,8 @@ export default function CompanyApproach() {
                   alt={card.title}
                   width={40}
                   height={40}
+                  className="text-light-base"
+                  style={{ color: '#F5F7FC' }}
                 />
               </div>
 

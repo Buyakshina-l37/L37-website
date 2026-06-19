@@ -15,10 +15,10 @@ export default function CompanyHeroMobile() {
       <Image
         src="/images/company-hero-mob.png"
         alt="L37 Company"
-        fill
-        className="object-cover object-center pointer-events-none"
+        width={780}
+        height={1080}
+        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
         priority
-        sizes="100vw"
       />
 
       {/* Content — top=96, left/right=20 */}

@@ -13,25 +13,21 @@ export default function CompanyInvestors() {
         style={{ height: 600 }}
       >
         {/* Background image — desktop */}
-        <div className="hidden md:block absolute inset-0">
-          <Image
-            src="/images/investors.png"
-            alt="Investors"
-            fill
-            className="object-cover object-center pointer-events-none"
-            sizes="1609px"
-          />
-        </div>
+        <Image
+          src="/images/investors.png"
+          alt="Investors"
+          width={1609}
+          height={600}
+          className="hidden md:block absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        />
         {/* Background image — mobile */}
-        <div className="md:hidden absolute inset-0">
-          <Image
-            src="/images/investors-mob.png"
-            alt="Investors"
-            fill
-            className="object-cover object-center pointer-events-none"
-            sizes="100vw"
-          />
-        </div>
+        <Image
+          src="/images/investors-mob.png"
+          alt="Investors"
+          width={780}
+          height={1200}
+          className="md:hidden absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        />
 
         {/* Content
             Mobile:  top=113, px=20, justify-start

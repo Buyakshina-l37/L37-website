@@ -63,8 +63,8 @@ export default function CompanyHero() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-denim font-medium text-light-base hover:opacity-90 transition-opacity"
-                style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 48px', borderRadius: 16, background: 'rgba(20,27,41,0.7)' }}
+                className="inline-flex items-center justify-center font-denim font-medium text-light-base bg-navy-base hover:opacity-90 transition-opacity"
+                style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 48px', borderRadius: 16 }}
               >
                 Request a briefing
               </Link>

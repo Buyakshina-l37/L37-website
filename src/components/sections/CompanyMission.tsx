@@ -8,8 +8,7 @@ import { motion } from 'framer-motion'
 // Quote: 56px gradient text (blue → teal)
 
 const LINES = [
-  'To evolve healthcare through',
-  'adaptive, intelligent systems that learn and',
+  'To evolve healthcare through adaptive, intelligent systems that learn and',
   'improve alongside the people they serve.',
 ]
 

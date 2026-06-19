@@ -20,7 +20,7 @@ export default function CompanyConviction() {
           className="font-denim font-medium text-navy-base"
           style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: '1.15', letterSpacing: '-0.48px' }}
         >
-          Bringing Clinical Intelligence to Physical AI is paramount for healthcare, life sciences and pharma.
+          Bringing Clinical Intelligence to Physical AI is paramount for healthcare, life sciences and pharma
         </h2>
 
         {/* Body */}

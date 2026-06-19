@@ -28,23 +28,23 @@ export default function CompanyHero() {
           style={{ background: 'rgba(0,0,0,0.35)' }}
         />
 
-        {/* Content — vertically centered, left-aligned */}
+        {/* Content — bottom-left aligned (Figma: x=90, y=268 in 580px frame) */}
         <div
-          className="absolute inset-0 flex flex-col justify-center"
-          style={{ left: 120, right: 120 }}
+          className="absolute inset-x-0 bottom-0 flex flex-col"
+          style={{ left: 90, right: 90, paddingBottom: 60 }}
         >
           <div className="flex flex-col gap-[48px] max-w-[700px]">
             <h1
-              className="font-denim-wd font-medium text-white"
+              className="font-denim font-medium text-white"
               style={{ fontSize: 56, lineHeight: '1.1', letterSpacing: '-0.56px' }}
             >
               We bring Clinical Intelligence to Physical AI
             </h1>
 
-            <div className="flex gap-[16px] items-center flex-wrap">
+            <div className="flex gap-[24px] items-center flex-wrap">
               <Link
                 href="/team"
-                className="inline-flex items-center justify-center font-denim font-medium text-navy-base bg-white hover:bg-opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center font-denim font-medium text-navy-base bg-white hover:opacity-90 transition-opacity"
                 style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 48px', borderRadius: 16 }}
               >
                 Meet the team
@@ -52,7 +52,7 @@ export default function CompanyHero() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center font-denim font-medium text-light-base hover:opacity-90 transition-opacity"
-                style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 48px', borderRadius: 16, background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.3)' }}
+                style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 48px', borderRadius: 16, background: 'rgba(20,27,41,0.7)' }}
               >
                 Request a briefing
               </Link>

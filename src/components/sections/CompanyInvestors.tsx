@@ -29,7 +29,7 @@ export default function CompanyInvestors() {
         {/* Content — vertically centered, left-aligned */}
         <div
           className="absolute inset-0 flex flex-col justify-center"
-          style={{ left: 120, right: 120 }}
+          style={{ left: 204, right: 204 }}
         >
           <div className="flex flex-col gap-[40px] max-w-[493px]">
             <div className="flex flex-col gap-[24px]">

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const navLinks = [
   /* { label: 'Services', href: '#' }, // hidden for now */
-  // { label: 'Company', href: '#' }, // hidden for now
+  { label: 'Company', href: '/company' },
   { label: 'Team', href: '/team' },
   /* { label: 'Careers', href: '#' }, { label: 'Blog', href: '#' }, // hidden for now */
   { label: 'Contact Us', href: '/contact' },
@@ -17,7 +17,7 @@ const socialLinks = [
 ]
 
 const navLinksMobile = [
-  // { label: 'Company', href: '#' }, // hidden for now
+  { label: 'Company', href: '/company' },
   { label: 'Team', href: '/team' },
   { label: 'Contact Us', href: '/contact' },
 ]

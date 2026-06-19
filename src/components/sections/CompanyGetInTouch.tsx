@@ -30,8 +30,8 @@ export default function CompanyGetInTouch() {
 
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center bg-navy-base text-light-base font-denim font-medium hover:opacity-90 transition-opacity"
-          style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 0', borderRadius: 16, width: 294 }}
+          className="inline-flex items-center justify-center bg-navy-base text-light-base font-denim font-medium hover:opacity-90 transition-opacity w-full md:w-[294px]"
+          style={{ fontSize: 16, lineHeight: '1.25', padding: '18px 0', borderRadius: 16 }}
         >
           Request a briefing
         </Link>

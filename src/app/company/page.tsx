@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import CompanyHero from '@/components/sections/CompanyHero'
+import CompanyHeroMobile from '@/components/sections/CompanyHeroMobile'
 import CompanyConviction from '@/components/sections/CompanyConviction'
 import CompanyMission from '@/components/sections/CompanyMission'
 import CompanyL37Name from '@/components/sections/CompanyL37Name'
@@ -21,8 +22,14 @@ export default function CompanyPage() {
     <>
       <main className="bg-[#f5f7fc] pt-[90px]">
 
-        {/* Hero */}
-        <CompanyHero />
+        {/* Hero — desktop */}
+        <div className="hidden md:block">
+          <CompanyHero />
+        </div>
+        {/* Hero — mobile */}
+        <div className="md:hidden">
+          <CompanyHeroMobile />
+        </div>
 
         {/* Conviction */}
         <CompanyConviction />

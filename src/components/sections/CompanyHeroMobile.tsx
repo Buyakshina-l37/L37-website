@@ -8,15 +8,14 @@ import Link from 'next/link'
 
 export default function CompanyHeroMobile() {
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{
-        height: 540,
-        backgroundImage: 'url(/images/company-hero-mob.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
+    <section className="relative overflow-hidden">
+      {/* Background photo — natural width:100% height:auto fills section at 390px → 540px */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/company-hero-mob.png"
+        alt="L37 Company"
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+      />
 
       {/* Content — top=96, left/right=20 */}
       <div

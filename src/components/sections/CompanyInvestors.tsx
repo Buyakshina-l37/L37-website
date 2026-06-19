@@ -11,26 +11,24 @@ export default function CompanyInvestors() {
         className="relative overflow-hidden rounded-[24px]"
         style={{ height: 600 }}
       >
-        {/* Background image — desktop (hidden on mobile via display:none inline override not needed; use wrapper) */}
-        <div className="hidden md:block" style={{ position: 'absolute', inset: 0 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/investors.png"
-            alt=""
-            aria-hidden="true"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-          />
-        </div>
+        {/* Background image — desktop */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/investors.png"
+          alt=""
+          aria-hidden="true"
+          className="hidden md:block"
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        />
         {/* Background image — mobile */}
-        <div className="md:hidden" style={{ position: 'absolute', inset: 0 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/investors-mob.png"
-            alt=""
-            aria-hidden="true"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-          />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/investors-mob.png"
+          alt=""
+          aria-hidden="true"
+          className="block md:hidden"
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        />
 
         {/* Content
             Mobile:  top=113, px=20, justify-start

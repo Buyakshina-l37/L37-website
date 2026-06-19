@@ -22,12 +22,6 @@ export default function CompanyHero() {
           sizes="1609px"
         />
 
-        {/* Dark overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'rgba(0,0,0,0.35)' }}
-        />
-
         {/* Content — bottom-left aligned (Figma: x=90, y=268 in 580px frame) */}
         <div
           className="absolute inset-x-0 bottom-0 flex flex-col"

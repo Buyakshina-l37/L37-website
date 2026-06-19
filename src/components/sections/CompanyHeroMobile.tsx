@@ -21,12 +21,6 @@ export default function CompanyHeroMobile() {
         sizes="390px"
       />
 
-      {/* Dark overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'rgba(0,0,0,0.35)' }}
-      />
-
       {/* Content — top=96, left/right=20 */}
       <div
         className="absolute flex flex-col"

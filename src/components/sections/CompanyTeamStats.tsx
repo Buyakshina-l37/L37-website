@@ -38,7 +38,7 @@ export default function CompanyTeamStats() {
             className="font-denim font-normal text-navy-90 leading-[1.4] text-center"
             style={{ fontSize: 'clamp(17px, 2vw, 20px)' }}
           >
-            HIPAA, HDS and GDPR controls, audit trails and consent management are part of the platform from day one — not bolted on. Local legal entities let us meet each market&apos;s data and sovereignty requirements.
+            Our founders and core team have spent their careers at the intersection of healthcare, data and AI, and have built and scaled together before. We bring experience across North America, Europe and Asia Pacific, and the cultural depth that global healthcare demands.
           </p>
         </div>
 

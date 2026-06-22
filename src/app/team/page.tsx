@@ -60,9 +60,9 @@ const TEAM = [
   },
   {
     name: 'Katharine Nowakowski',
-    role: 'Ontology lead Engineer',
+    role: 'Senior Knowledge Engineer',
     photo: '/images/team/Katharine-Nowakowski.png',
-    bio: 'Katharine is a scientist and semantic engineer with a PhD in Biomechanical Engineering who connects clinical science to knowledge-graph architecture. At L37 she leads the ontology layer at the center of the platform, integrating genetic, gait and EHR data into structured ontologies that power clinical and pharmaceutical insight. Her work spans graphRAG pipelines, SPARQL/SHACL validation and deep-learning simulation of human movement.',
+    bio: 'Katharine is a scientist and knowledge engineer with a PhD in Biomedical and Biomechanical Engineering who connects clinical science to knowledge-graph architecture. At L37 she leads the semantic layer at the center of the platform, integrating genetic, gait and EHR data amongst others into structured ontologies that power clinical and pharmaceutical insight. Her work spans from graphRAG pipelines to SHACL validation and everything in-between. She has also published peer-reviewed literature in deep-learning simulation of human movement.',
     email: 'katharine.nowakowski@l37.co',
     linkedin: 'https://www.linkedin.com/in/katharine-n-803954124/',
   },

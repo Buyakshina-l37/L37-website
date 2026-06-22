@@ -23,7 +23,7 @@ export default function CompanyL37Name() {
             className="font-denim font-normal text-navy-90 leading-[1.4]"
             style={{ fontSize: 'clamp(17px, 2vw, 20px)' }}
           >
-            Biology and machine intelligence, joined. That is L37.
+            L37 is where biology and machine intelligence become one.
           </p>
         </div>
 

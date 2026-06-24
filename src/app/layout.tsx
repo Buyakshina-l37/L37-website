@@ -3,6 +3,7 @@ import { Courier_Prime, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import NavMobile from '@/components/layout/NavMobile'
+import { Analytics } from '@vercel/analytics/next'
 
 const courierPrime = Courier_Prime({
   subsets: ['latin'],
@@ -70,6 +71,7 @@ export default function RootLayout({
           <NavMobile />
         </div>
         {children}
+        <Analytics />
       </body>
     </html>
   )
